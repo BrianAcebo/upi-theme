@@ -1,1 +1,32 @@
-helloo
+<link rel="stylesheet" href="{{ 'homepage.scss.css' | asset_url }}">
+
+<div id="home-page">
+    <section class="two-img-banner w-full m-0 p-0 d-flex flex-row">
+        <div class="flex-column text-center justify-content-center align-items-center hero-two-bg-img" style="background-image: url({{ 'home-hero-bg-1.jpg' | file_img_url: '1024x768' }})">
+            <h2>Online Store</h2>
+            <p>
+                Describe exactly what the company does and what a customer can expect when working with the company. 
+                Avoid using verbose words or phrases.
+            </p>
+            <a href="/" class="cta-btn">Shop Now</a>
+        </div>
+
+        <div class="flex-column text-center justify-content-center align-items-center hero-two-bg-img" style="background-image: url({{ 'home-hero-bg-2.jpg' | file_img_url: '1024x768' }})">
+            <h2>In-Store Offerings</h2>
+            <p>
+                Describe exactly what the company does and what a customer can expect when working with the company. 
+                Avoid using verbose words or phrases.
+            </p>
+            <a href="/" class="cta-btn">Check out our in-store offerings</a>
+        </div>
+
+        <div class="flex-column text-center justify-content-center align-items-center hero-one-bg-img" style="background-image: url({{ 'home-hero-bg-3.jpg' | file_img_url: '1024x768' }})">
+            <h2>This Is My Business!</h2>
+            <p>
+                Describe exactly what the company does and what a customer can expect when working with the company. 
+                Avoid using verbose words or phrases.
+            </p>
+            <a href="/" class="cta-btn">Check out our products</a>
+        </div>
+    </section>
+</div>
