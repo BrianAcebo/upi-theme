@@ -7,9 +7,10 @@
     <div class="lg-container">
 
         <section class="product-info">
-            <img src="{{ 'test-product.jpg' | file_img_url: '600x600' }}" alt="{{ product.handle }}">
+            <img src="{{ 'test-product.jpg' | file_img_url: '600x600' }}" alt="{{ product.title }}">
 
             <div class="info-container">
+                <span>Royal 111</span>
                 <h1>{{ product.title }}</h1>
 
                 <h2>Royal® Exposed Manual Water Closet Flushometer</h2>
@@ -33,22 +34,69 @@
 
                 <button class="buy-now-btn">Buy Now</button>
 
-                <div class="product-accordians">
-                    <div class="accordion-container">
-                        <div class="acc">
-                            <input type="checkbox" id="chck1">
-                            <label class="acc-label" for="chck1">Item 1</label>
-                            <div class="acc-content">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                <p class="free-shipping">Free shipping over $50</p>
+
+                <div class="product-accordions">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Specifications</button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <div class="acc-list">
+                                            <ul>
+                                                <li>Flush Volume: 1.28 gpf (4.8 Lpf)</li>
+                                                <li>Finish: Polished Chrome (CP)</li>
+                                                <li>Valve: Diaphragm</li>
+                                                <li>Valve Body Material: Semi-red Brass</li> 
+                                                <li>Fixture Type: Water Closet</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="acc">
-                            <input type="checkbox" id="chck2">
-                            <label class="acc-label" for="chck2">Item 2</label>
-                            <div class="acc-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Features</button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="acc-list">
+                                        <ul>
+                                            <li>PERMEX® Synthetic Rubber Diaphragm with Dual Filtered Fixed Bypass</li>
+                                            <li>Sweat Solder Adapter with Cover Tube & Cast Wall Flange with Set Screw</li>
+                                            <li>Non-Hold-Open Handle, Fixed Metering Bypass and No External Volume Adjustment to Ensure Water Conservation</li>
+                                            <li>Diaphragm, Handle Packing and Vacuum Breaker to be molded from PERMEX® Rubber</li>
+                                            <li>Compound for Chloramine Resistance ADA Compliant Metal Oscillating Non-Hold-Open Handle</li>
+                                            <li>1” I.P.S. Screwdriver Bak-Chek® Angle Stop with Free Spinning Vandal Resistant Stop Cap</li> 
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Compliance and Certifications</button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    ADA Compliant, BAA Compliant, BREEAM Materials Credit, BREEAM Water Credit, Carbon Neutral, cUPC Certified, cUPC Green Certified, EPD, Green Globes Materials & Resources Credit, Green Globes Water Credit, HPD, LBC Credit, LEED Materials & Resources EPD Credit, LEED Materials & Resources HPD Credit, LEED V4 Water Efficiency Credit, Satisfies LEED Credits, WaterSense Listed, WELL Building Standards
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spec-sheet-download">
+                            Spec Sheet Download
+
+                            <button class="download-btn">
+                                Download Here
+                                <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/download-icon.svg?v=1666801966" alt="download">
+                            </button>
                         </div>
                     </div>
                 </div>
