@@ -1,0 +1,177 @@
+#product-page {
+    padding: 0 64px;
+
+    .product-info {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 112px 0 44px;
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            margin-right: 40px;
+            height: auto;
+        }
+
+        .info-container {
+            padding-left: 40px;
+
+            h1 {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 65px;
+                margin-bottom: 24px;
+            }
+
+            h2, strong {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                margin-bottom: 24px;
+                display: block;
+            }
+
+            .desc {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 16px;
+
+                a {
+                    color: #0051A1!important;
+                }
+            }
+
+            .specs {
+                padding-left: 10px;
+                margin: 0;
+
+                li {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 8px;
+                }
+            }
+
+            .q-container {
+                margin: 24px 0 44px 0;
+
+                .q {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #0051A1;
+                    margin: 0 24px 0 0;
+                }
+
+                .quantity {
+                    padding: 12px;
+                    width: 64px;
+                    height: 48px;
+                    background: #FFFFFF;
+                    border: 1px solid #0051A1;
+                    margin-right: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+
+                button {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .buy-now-btn {
+                border: 1px solid #000000;
+                padding: 12px 0;
+                width: 100%;
+                background: transparent;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .product-accordions {
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    z-index: -1;
+                }
+
+                input:checked {
+                    + .tab-label {
+                        &::after {
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    ~ .tab-content {
+                        max-height: 100vh;
+                        padding: 1em;
+                    }
+                }
+
+                .accordion-container {
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+
+                    .acc {
+                        width: 100%;
+                        color: white;
+                        overflow: hidden;
+
+                        &-label {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 1em;
+                            background: $midnight;
+                            font-weight: bold;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: darken($midnight, 10%);
+                            }
+                            
+                            &::after {
+                                content: "\276F";
+                                width: 1em;
+                                height: 1em;
+                                text-align: center;
+                                transition: all .35s;
+                            }
+                        }
+                        &-content {
+                          max-height: 0;
+                          padding: 0 1em;
+                          color: $midnight;
+                          background: white;
+                          transition: all .35s;
+                        }
+                        &-close {
+                          display: flex;
+                          justify-content: flex-end;
+                          padding: 1em;
+                          font-size: 0.75em;
+                          background: $midnight;
+                          cursor: pointer;
+                          &:hover {
+                            background: darken($midnight, 10%);
+                          }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

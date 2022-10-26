@@ -2,32 +2,183 @@
 
 <div id="about-page">
 
-    {% render 'hero-banner', img: 'https://cdn.shopify.com/s/files/1/0666/5784/5535/files/home-hero-bg-1.jpg?v=1666294586' %}
+  {% render 'hero-banner', img: 'https://cdn.shopify.com/s/files/1/0666/5784/5535/files/home-hero-bg-1.jpg?v=1666294586' %}
 
-    <div class="lg-container">
+  <div class="lg-container">
 
-        <div class="about-text">
-            <div class="text-left">
-                <span>About</span>
-                <h2>About U-Plumb-it</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. 
-                    Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque. Sit turpis pretium eget maecenas. 
-                    Vestibulum dolor mattis consectetur eget commodo vitae.
-                    <br>
-                    <br>
-                    Amet pellentesque sit pulvinar lorem mi a, euismod risus rhoncus. Elementum ullamcorper nec, habitasse vulputate. Eget dictum quis est sed egestas tellus, 
-                    a lectus. Quam ullamcorper in fringilla arcu aliquet fames arcu.Lacinia eget faucibus urna, nam risus nec elementum cras porta. Sed elementum, sed dolor 
-                    purus dolor dui. Ut dictum nulla pulvinar vulputate sit sagittis in eleifend dignissim. Natoque mauris cras molestie velit. Maecenas eget adipiscing quisque viverra lectus arcu, 
-                    tincidunt ultrices pellentesque.
-                </p>
+    <!-- About Text -->
+    <div class="about-text">
+      <div class="text-left">
+        <span>About</span>
+        <h2>About U-Plumb-it</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. 
+          Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque. Sit turpis pretium eget maecenas. 
+          Vestibulum dolor mattis consectetur eget commodo vitae.
+          <br>
+          <br>
+          Amet pellentesque sit pulvinar lorem mi a, euismod risus rhoncus. Elementum ullamcorper nec, habitasse vulputate. Eget dictum quis est sed egestas tellus, 
+          a lectus. Quam ullamcorper in fringilla arcu aliquet fames arcu.Lacinia eget faucibus urna, nam risus nec elementum cras porta. Sed elementum, sed dolor 
+          purus dolor dui. Ut dictum nulla pulvinar vulputate sit sagittis in eleifend dignissim. Natoque mauris cras molestie velit. Maecenas eget adipiscing quisque viverra lectus arcu, 
+          tincidunt ultrices pellentesque.
+        </p>
+      </div>
+
+      <img src="{{ 'about-img.jpg' | file_img_url: '1024x768' }}" alt="about">
+    </div>
+    <!-- /About Text -->
+
+    <!-- Team Slider -->
+    <section class="team-slider">
+        <span>Our team</span>
+        <h3>Introduce your team</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        </p>
+
+        <!-- Slider main container -->
+        <div class="swiper" id="team-slider-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{ 'team-placeholder.jpg' | file_img_url: '600x600' }}" alt="team">
+                    <h4>Full name</h4>
+                    <p class="job-title">Job title</p>
+                    <p class="bio">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                    <div class="d-flex flex-row socials">
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/linkedin.svg?v=1666628637" alt="linkedin">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/twitter.svg?v=1666628630" alt="twitter">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/dribbble.svg?v=1666628653" alt="dribbble">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <img src="{{ 'team-placeholder.jpg' | file_img_url: '600x600' }}" alt="team">
+                    <h4>Full name</h4>
+                    <p class="job-title">Job title</p>
+                    <p class="bio">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                    <div class="d-flex flex-row socials">
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/linkedin.svg?v=1666628637" alt="linkedin">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/twitter.svg?v=1666628630" alt="twitter">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/dribbble.svg?v=1666628653" alt="dribbble">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ 'team-placeholder.jpg' | file_img_url: '600x600' }}" alt="team">
+                    <h4>Full name</h4>
+                    <p class="job-title">Job title</p>
+                    <p class="bio">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                    <div class="d-flex flex-row socials">
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/linkedin.svg?v=1666628637" alt="linkedin">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/twitter.svg?v=1666628630" alt="twitter">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/dribbble.svg?v=1666628653" alt="dribbble">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ 'team-placeholder.jpg' | file_img_url: '600x600' }}" alt="team">
+                    <h4>Full name</h4>
+                    <p class="job-title">Job title</p>
+                    <p class="bio">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                    <div class="d-flex flex-row socials">
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/linkedin.svg?v=1666628637" alt="linkedin">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/twitter.svg?v=1666628630" alt="twitter">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/dribbble.svg?v=1666628653" alt="dribbble">
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <img src="{{ 'about-img.jpg' | file_img_url: '1024x768' }}" alt="about">
+            <div class="swiper-pagination"></div>
+        
+            <div class="swiper-btns-container">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
+    </section>
+    <!-- /Team Slider -->
 
-        {% section 'contact-text-section' %}
+    <!-- About Contact -->
+    <section class="about-contact">
+        <span>Tagline</span>
+        <h3>Contact Us</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        </p>
+    </section>
 
-    </div>
+    {% section 'contact-text-section' %}
+    <!-- /About Contact -->
+
+  </div>
 
 </div>
+
+<script>
+    const team_slider = new Swiper('#team-slider-container', {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+        loop: true,
+        preventClicks: false,
+
+        pagination: {
+            el: '.swiper-pagination',
+        },
+  
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+  
+        breakpoints: {
+            576: {
+                slidesPerView: 1.3,
+                slidesPerGroup: 1,
+            },
+    
+            778: {
+                slidesPerView: 2.3,
+                slidesPerGroup: 1,
+            },
+    
+            1200: {
+                slidesPerView: 3.3,
+                slidesPerGroup: 2,
+                spaceBetween: 30
+            },
+        }
+    });
+</script>

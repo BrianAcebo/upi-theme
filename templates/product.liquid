@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="{{ 'product.scss.css' | asset_url }}">
+
+{% render 'breadcrumbs' %}
+
+<div id="product-page">
+
+    <div class="lg-container">
+
+        <section class="product-info">
+            <img src="{{ 'test-product.jpg' | file_img_url: '600x600' }}" alt="{{ product.handle }}">
+
+            <div class="info-container">
+                <h1>{{ product.title }}</h1>
+
+                <h2>Royal® Exposed Manual Water Closet Flushometer</h2>
+                <strong>$55 </strong>
+
+                <p class="desc">
+                    1.28 gpf, Polished Chrome Finish, Fixture Connection Top Spud, Single Flush, Royal® Exposed Manual Water Closet Flushometer. Learn what makes a Royal flushometer different: <a href="#">About the Royal Flushometer.</a>
+                </p>
+
+                <ul class="specs">
+                    <li>Part number: #56903</li>
+                    <li>Sloan model number: Royal 111-1.28</li>
+                    <li>Manufacturer: Sloan</li>
+                </ul>
+
+                <div class="d-flex justify-content-start align-items-center q-container">
+                    <p class="q">Quantity</p>
+                    <input type="number" class="quantity" value="1" />
+                    <button class="cta-btn">Add To Cart</button>
+                </div>
+
+                <button class="buy-now-btn">Buy Now</button>
+
+                <div class="product-accordians">
+                    <div class="accordion-container">
+                        <div class="acc">
+                            <input type="checkbox" id="chck1">
+                            <label class="acc-label" for="chck1">Item 1</label>
+                            <div class="acc-content">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                            </div>
+                        </div>
+
+                        <div class="acc">
+                            <input type="checkbox" id="chck2">
+                            <label class="acc-label" for="chck2">Item 2</label>
+                            <div class="acc-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% render 'product-carousel', product_line: 'Royal Product Line', title: 'Product Parts', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' %}
+
+    </div>
+
+</div>
