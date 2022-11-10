@@ -1,10 +1,5 @@
 /* Product Carousel */
 .product-slider {
-    padding: 112px 0;
-
-    @media (max-width: 995px) {
-        padding: 75px 15px;
-    }
 
     span {
         font-style: normal;
@@ -33,6 +28,45 @@
             font-size: 32px;
             line-height: 46px;
             margin-bottom: 10px;
+        }
+    }
+
+    .description-view-all {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 80px;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: left;
+            margin: 0;
+            display: block;
+        }
+
+        .description-view-btn {
+            padding: 12px 24px;
+            background: transparent;
+            color: #000;
+            border: 1px solid ;
+            outline: none;
+            transition: all ease 0.3s;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            display: block;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+        
+        .description-view-btn:hover {
+            opacity: 0.6;
         }
     }
 

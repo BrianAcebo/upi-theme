@@ -56,6 +56,11 @@
     display: inline-flex;
     flex-wrap: wrap;
   }
+  @media screen and (max-width: 990px) {
+    .dekstop-menu {
+      display: none;
+    }
+  }
 
   summary.list-menu__item {
     padding-right: 2.7rem;
@@ -99,7 +104,7 @@
 
   @media screen and (max-width: 995px) {
     .header {
-      padding: 11px 15px;
+      padding: 0 15px;
     }
   }
 
@@ -378,7 +383,7 @@
 
       {%- if section.settings.menu != blank -%}
         {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-          <nav>
+          <nav class="dekstop-menu">
             <ul class="list-menu list-menu--inline" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>

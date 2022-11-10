@@ -7,14 +7,14 @@
     <div class="lg-container">
 
         <section class="product-info">
-            <img src="{{ 'test-product.jpg' | file_img_url: '600x600' }}" alt="{{ product.title }}">
+            <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
 
             <div class="info-container">
-                <span>Royal 111</span>
+                <span>{{ product.vendor }}</span>
                 <h1>{{ product.title }}</h1>
 
                 <h2>Royal® Exposed Manual Water Closet Flushometer</h2>
-                <strong>$55 </strong>
+                <strong>${{ product.price }}</strong>
 
                 <p class="desc">
                     1.28 gpf, Polished Chrome Finish, Fixture Connection Top Spud, Single Flush, Royal® Exposed Manual Water Closet Flushometer. Learn what makes a Royal flushometer different: <a href="#">About the Royal Flushometer.</a>
@@ -28,8 +28,12 @@
 
                 <div class="d-flex justify-content-start align-items-center q-container">
                     <p class="q">Quantity</p>
-                    <input type="number" class="quantity" value="1" />
-                    <button class="cta-btn">Add To Cart</button>
+
+                    <form method="post" action="/cart/add" class="d-flex">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <input min="1" type="number" id="quantity" name="quantity" value="1" class="quantity" >
+                        <input type="submit" value="Add To Cart" class="cta-btn" />
+                    </form>
                 </div>
 
                 <button class="buy-now-btn">Buy Now</button>

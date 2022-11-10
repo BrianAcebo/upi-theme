@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="{{ 'homepage.scss.css' | asset_url }}">
 
 <div id="home-page">
-    <section class="two-img-banner w-full m-0 p-0 d-flex flex-row">
-        <div class="flex-column text-center justify-content-center align-items-center hero-two-bg-img" style="background-image: url({{ 'home-hero-bg-1.jpg' | file_img_url: '1024x768' }})">
+    <section class="two-img-banner w-full m-0 p-0 d-flex">
+        <div class="hero-two-bg-img" style="background-image: url({{ 'home-hero-bg-1.jpg' | file_img_url: '1024x768' }})">
             <h2>Online Store</h2>
             <p>
                 Describe exactly what the company does and what a customer can expect when working with the company. 
@@ -11,7 +11,7 @@
             <a href="/" class="cta-btn">Shop Now</a>
         </div>
 
-        <div class="flex-column text-center justify-content-center align-items-center hero-two-bg-img" style="background-image: url({{ 'home-hero-bg-2.jpg' | file_img_url: '1024x768' }})">
+        <div class="hero-two-bg-img" style="background-image: url({{ 'home-hero-bg-2.jpg' | file_img_url: '1024x768' }})">
             <h2>In-Store Offerings</h2>
             <p>
                 Describe exactly what the company does and what a customer can expect when working with the company. 
@@ -19,19 +19,12 @@
             </p>
             <a href="/" class="cta-btn">Check out our in-store offerings</a>
         </div>
-
-        <div class="flex-column text-center justify-content-center align-items-center hero-one-bg-img" style="background-image: url({{ 'home-hero-bg-3.jpg' | file_img_url: '1024x768' }})">
-            <h2>This Is My Business!</h2>
-            <p>
-                Describe exactly what the company does and what a customer can expect when working with the company. 
-                Avoid using verbose words or phrases.
-            </p>
-            <a href="/" class="cta-btn">Check out our products</a>
-        </div>
     </section>
 
     <div class="home-content">
         <div class="lg-container">
+
+            <!-- Section Display -->
             <section class="section-display">
                 <span>Our Products</span>
                 <h3>Sloan Fixtures</h3>
@@ -40,6 +33,78 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     <a href="#" class="display-view-btn">View all</a>
                 </div>
+
+                <!-- Home Display Slider -->
+                <section class="section-display-slider">
+                    <!-- Slider main container -->
+                    <div class="swiper" id="display-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="home-product">
+                                    <div class="home-prod-img">
+                                        <img src="{{ 'home-fixtures-1.jpg' | file_img_url: '600x600' }}" alt="sloan fixtures" />
+                                    </div>
+            
+                                    <p class="home-prod-title">Sloan Flushometers</p>
+                                    <p class="home-prod-desc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+                                    </p>
+            
+                                    <a href="/collections/sloan-flushometers" class="home-prod-link">
+                                        Shop Flushometers
+                                        <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right-blue.svg?v=1666900903" alt="arrow right" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="home-product">
+                                    <div class="home-prod-img">
+                                        <img src="{{ 'home-fixtures-2.jpg' | file_img_url: '600x600' }}" alt="sloan fixtures" />
+                                    </div>
+            
+                                    <p class="home-prod-title">Sloan Faucets</p>
+                                    <p class="home-prod-desc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+                                    </p>
+            
+                                    <a href="#" class="home-prod-link">
+                                        Shop Faucets
+                                        <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right-blue.svg?v=1666900903" alt="arrow right" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="home-product">
+                                    <div class="home-prod-img">
+                                        <img src="{{ 'home-fixtures-3.jpg' | file_img_url: '600x600' }}" alt="sloan fixtures" />
+                                    </div>
+            
+                                    <p class="home-prod-title">Sloan Soap Dispensers</p>
+                                    <p class="home-prod-desc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+                                    </p>
+            
+                                    <a href="#" class="home-prod-link">
+                                        Shop Soap Dispensers
+                                        <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right-blue.svg?v=1666900903" alt="arrow right" />
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+    
+                        <div class="swiper-btns-container">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                    <!-- /Slider main container -->
+                </section>
+                <!-- /Home Display Slider -->
 
                 <div class="products-display">
                     <div class="home-product">
@@ -51,31 +116,125 @@
                         <p class="home-prod-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
                         </p>
+
+                        <a href="/collections/sloan-flushometers" class="home-prod-link">
+                            Shop Flushometers
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right-blue.svg?v=1666900903" alt="arrow right" />
+                        </a>
                     </div>
 
                     <div class="home-product">
                         <div class="home-prod-img">
-                            <img src="{{ 'home-fixtures-1.jpg' | file_img_url: '600x600' }}" alt="sloan fixtures" />
+                            <img src="{{ 'home-fixtures-2.jpg' | file_img_url: '600x600' }}" alt="sloan fixtures" />
                         </div>
 
-                        <p class="home-prod-title">Sloan Flushometers</p>
+                        <p class="home-prod-title">Sloan Faucets</p>
                         <p class="home-prod-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
                         </p>
+
+                        <a href="#" class="home-prod-link">
+                            Shop Faucets
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right-blue.svg?v=1666900903" alt="arrow right" />
+                        </a>
                     </div>
 
                     <div class="home-product">
                         <div class="home-prod-img">
-                            <img src="{{ 'home-fixtures-1.jpg' | file_img_url: '600x600' }}" alt="sloan fixtures" />
+                            <img src="{{ 'home-fixtures-3.jpg' | file_img_url: '600x600' }}" alt="sloan fixtures" />
                         </div>
 
-                        <p class="home-prod-title">Sloan Flushometers</p>
+                        <p class="home-prod-title">Sloan Soap Dispensers</p>
                         <p class="home-prod-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
                         </p>
+
+                        <a href="#" class="home-prod-link">
+                            Shop Soap Dispensers
+                            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right-blue.svg?v=1666900903" alt="arrow right" />
+                        </a>
                     </div>
                 </div>
             </section>
+            <!-- /Section Display -->
+
+            <!-- About Text -->
+            <div class="about-text">
+                <div class="text-left">
+                    <span>About</span>
+                    <h2>
+                        What We Do
+                    </h2>
+                    <p>
+                        Describe exactly what the company does and what a customer can expect when.
+                    </p>
+                    <div class="d-flex align-items-center justify-content-start about-list">
+                        <img src="{{ 'about-box.svg' | file_url }}" alt="about box">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    </div>
+                    <div class="d-flex align-items-center about-list">
+                        <img src="{{ 'about-box.svg' | file_url }}" alt="about box">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    </div>
+                    <div class="d-flex align-items-center about-list">
+                        <img src="{{ 'about-box.svg' | file_url }}" alt="about box">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    </div>
+                    <a href="/pages/about" class="about-cta">Learn more</a>
+                </div>
+        
+                <img src="{{ 'home-about.jpg' | file_url }}" alt="about">
+            </div>
+             <!-- /About Text -->
+
+
+            {% render 'product-carousel', product_line: 'Tagline', title: 'Products', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', view_btn: true %}
+
+
+            <div class="in-store-wrapper">
+                {% section 'in-store-brands' %}
+            </div>
+
+
+            {% capture img_link %}{{ 'home-email-banner.jpg' | file_url }}{% endcapture %}
+            {% render 'email-banner' bg_img: img_link %}
+
         </div>
     </div>
 </div>
+
+<script>
+    const display_carousel = new Swiper('#display-carousel', {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        loop: true,
+        preventClicks: false,
+
+        pagination: {
+            el: '.swiper-pagination',
+        },
+  
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+  
+        breakpoints: {
+            595: {
+                slidesPerView: 1.6,
+                slidesPerGroup: 1,
+            },
+
+            695: {
+                slidesPerView: 2.2,
+                slidesPerGroup: 1,
+            },
+    
+            800: {
+                slidesPerView: 2.3,
+                slidesPerGroup: 1,
+            }
+        }
+    });
+</script>

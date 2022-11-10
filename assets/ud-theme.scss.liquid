@@ -23,8 +23,7 @@ p {
 
 a {
     font-family: $main-font;
-    text-decoration: none!important;
-    color: #000!important;
+    text-decoration: none;
 }
 
 
@@ -41,11 +40,17 @@ a {
 .cta-btn-secondary {
     padding: 12px 24px;
     font-size: 16px;
+    line-height: 24px;
     background: $primary-blue;
     color: #fff;
     border: none;
     outline: none;
     transition: all ease 0.3s;
+
+    @media (max-width: 786px) {
+        font-size: 14px;
+        line-height: 22px;
+    }
 }
 
 .cta-btn {
@@ -77,6 +82,10 @@ a {
 
     img {
         margin-right: 15px;
+
+        @media (max-width: 768px) {
+            margin-right: 0;
+        }
     }
 }
 
@@ -89,6 +98,10 @@ a {
 .two-img-banner {
     height: 80vh;
 
+    @media (max-width: 995px) {
+        flex-direction: column;
+    }
+
     .hero-two-bg-img {
         background-position: center;
         background-repeat: no-repeat;
@@ -96,9 +109,14 @@ a {
         width: 50%;
         height: 100%;
         display: flex;
+        flex-direction: column;
+        text-align: center; 
+        justify-content: center;
+        align-items: center;
 
         @media (max-width: 995px) {
-            display: none;
+            width: 100%;
+            flex-direction: column;
         }
 
         h2, p {
@@ -111,6 +129,12 @@ a {
             font-size: 56px;
             line-height: 65px;
             margin-bottom: 24px;
+
+            @media (max-width: 768px) {
+                font-size: 32px;
+                line-height: 45px;
+                margin-bottom: 10px;
+            }
         }
 
         p {
@@ -120,6 +144,10 @@ a {
             font-size: 18px;
             line-height: 26px;
             margin-bottom: 50px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 26px;
+            }
         }
     }
 
@@ -132,7 +160,7 @@ a {
         height: 100%;
 
         @media (max-width: 995px) {
-            display: flex;
+            /* display: flex; */
         }
 
         h2, p {

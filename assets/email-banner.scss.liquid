@@ -1,0 +1,99 @@
+.email-banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 112px 15px;
+
+    @media (max-width: 786px) {
+        padding: 75px 15px;
+    }
+
+    .email-text-container {
+        margin: 0 auto;
+        max-width: 768px;
+        width: 100%;
+        text-align: center;
+
+        @media (max-width: 786px) {
+            text-align: left;
+        }
+
+        h3 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+            margin-bottom: 24px;
+            color: #fff;
+
+            @media (max-width: 786px) {
+                font-size: 32px;
+                line-height: 46px;
+                margin-bottom: 10px;
+            }
+        }
+        
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 40px;
+
+            @media (max-width: 786px) {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 24px;
+            }
+        }
+
+        .input-group {
+            margin: 0 auto 16px auto;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 786px) {
+                justify-content: flex-start;
+            }
+        }
+
+        .email-input {
+            width: 394px;
+            height: 48px;
+            background: #FFFFFF;
+            padding: 12px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #505050;
+            border: none;
+            margin-right: 16px;
+            outline: none;
+
+            @media (max-width: 786px) {
+                font-size: 14px;
+                line-height: 22px;
+                width: 60%;
+            }
+        }
+
+        .email-submit {
+            @media (max-width: 786px) {
+                width: 35%;
+            }
+        }
+
+        small {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            
+            a {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+}
