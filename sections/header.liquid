@@ -712,6 +712,14 @@
   customElements.define('sticky-header', StickyHeader);
 {% endjavascript %}
 
+<script>
+  $(document).ready(function(){
+    $("dropdown-btn").hover(function() {
+      $(this).find('dropdown-menu').css({ 'display', 'block'};)
+    }).
+  });
+</script>
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",

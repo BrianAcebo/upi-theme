@@ -1,0 +1,21 @@
+{% for block in section.blocks %}
+    <img src="{{block.settings.image | img_url: 'master'}}" />
+{% endfor %}
+
+{% schema %}
+    {
+        "blocks": [
+            {
+                "type": "image",
+                "name": "image block",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "label": "Your image",
+                        "id": "image"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

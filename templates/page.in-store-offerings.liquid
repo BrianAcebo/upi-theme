@@ -16,7 +16,9 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <div class="products-we-sell-container">
+                {% section 'in-store-products' %}
+
+                {%- comment -%} <div class="products-we-sell-container">
                     <div class="products-we-sell-wrapper">
                         <img src="{{ 'about-box.svg' | file_url }}" alt="about box">
                         <h3>Product type</h3>
@@ -66,7 +68,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
                         </p>
                     </div>
-                </div>
+                </div> {%- endcomment -%}
             </div>
             <!-- /Products We Sell -->
 
