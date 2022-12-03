@@ -217,10 +217,17 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/example-brand.png"
             }
+          },
+          "69897e0c-cdfc-402f-82da-a211e3ea9935": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/example-brand.png"
+            }
           }
         },
         "block_order": [
-          "6940f016-dcaf-4fe2-b3da-c398da4a8b12"
+          "6940f016-dcaf-4fe2-b3da-c398da4a8b12",
+          "69897e0c-cdfc-402f-82da-a211e3ea9935"
         ],
         "settings": {
         }
