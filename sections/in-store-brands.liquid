@@ -31,3 +31,27 @@
     </div>
 </section>
 <!-- /In-Store Brands -->
+
+{% schema %}
+    {
+        "blocks": [
+            {
+                "type": "image",
+                "name": "image block",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "label": "Brand image",
+                        "id": "image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "category": "image",
+                "name": "In Store Brands"
+            }
+        ]
+    }
+{% endschema %}
