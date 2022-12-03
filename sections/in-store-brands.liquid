@@ -7,7 +7,9 @@
     <div class="brand-wrapper">
       <div class="d-flex justify-content-center align-items-center flex-column brand-container">
         {% for block in section.blocks %}
-          <div class="brand"></div>
+          <div class="brand">
+            <img src="{{ block.settings.image | img_url: 'master' }}" />
+          </div>
         {% endfor %}
       </div>
     </div>
