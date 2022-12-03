@@ -5,7 +5,7 @@
     <p class="text-center brands-we-carry">In-Store Brands We Carry</p>
 
     <div class="brand-wrapper">
-      <div class="d-flex brand-container">
+      <div class="d-flex justify-content-center align-items-center brand-container">
         {% for block in section.blocks %}
           <div class="brand">
             <img src="{{ block.settings.image | img_url: 'master' }}" />
