@@ -1,10 +1,10 @@
 <div class="repair-parts-collections-container">
   {% for block in section.blocks %}
     <div class="repair-part-collection">
-        <a href="{{ block.settings.collection_link }}">
-            <img src="{{ block.settings.collection_image }}" alt="{{ block.settings.collection_title }}" />
+        <a href="{{ block.settings.collection.handle }}">
+            <img src="{{ block.settings.collection.image }}" alt="{{ block.settings.collection.title }}" />
             <div class="d-flex flex-row justify-content-center align-items-center w-full">
-                <p>{{ block.settings.collection_title }}</p>
+                <p>{{ block.settings.collection.title }}</p>
                 <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
             </div>
         </a>
