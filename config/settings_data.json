@@ -425,6 +425,13 @@
               "image": "shopify:\/\/shop_images\/Bathroom-Trim.jpg",
               "text": "Bathroom Trim"
             }
+          },
+          "e140c136-6a52-43b6-97d5-31ec854de150": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Cast-Iron-Clawfoot-Tubs.jpg",
+              "text": "Cast Iron Clawfoot Tubs"
+            }
           }
         },
         "block_order": [
@@ -435,7 +442,8 @@
           "1fa91df8-eb3f-48a1-91a4-351aad3fc0c4",
           "baa9c15f-8e82-4b69-85a0-e0324568e484",
           "1e29a67b-2e11-4d25-a98a-9049f81fc591",
-          "b398ae9b-495d-47b2-82a6-b99573e3d704"
+          "b398ae9b-495d-47b2-82a6-b99573e3d704",
+          "e140c136-6a52-43b6-97d5-31ec854de150"
         ],
         "settings": {
         }
