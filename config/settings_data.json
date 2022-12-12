@@ -366,6 +366,28 @@
         ],
         "settings": {
         }
+      },
+      "in-store-products": {
+        "type": "in-store-products",
+        "blocks": {
+          "4412bb16-60fa-415f-b56e-dca817f4d35f": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Decorative-Bathroom-Kitchen-Trim.jpg",
+              "text": "Decorative Bathroom & Kitchen Trim"
+            }
+          }
+        },
+        "block_order": [
+          "4412bb16-60fa-415f-b56e-dca817f4d35f"
+        ],
+        "settings": {
+        }
+      },
+      "contact-text-section": {
+        "type": "contact-text-section",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
