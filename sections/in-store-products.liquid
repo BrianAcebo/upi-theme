@@ -1,5 +1,16 @@
+<link rel="stylesheet" href="{{ 'in-store-products.scss.css' | asset_url }}">
+
+<div class="in-store-products d-flex flex-wrap w-full justify-content-center">
+    {% for i in (1..8) %}
+        <div class="product-block">
+            <div class="block-img"></div>
+            <p>Decorative Bathroom & Kitchen Trim</p>
+        </div>
+    {% endfor %}
+</div>
+
 {% for block in section.blocks %}
-    <img src="{{block.settings.image | img_url: 'master'}}" />
+    <img src="{{ block.settings.image | img_url: 'master' }}" />
 {% endfor %}
 
 {% schema %}
@@ -15,6 +26,12 @@
                         "id": "image"
                     }
                 ]
+            }
+        ],
+        "presets": [
+            {
+                "category": "image",
+                "name": "In Store Brands"
             }
         ]
     }
