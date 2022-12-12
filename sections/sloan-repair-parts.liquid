@@ -12,15 +12,20 @@
   {% endfor %}
 </div>
 
+
 {% schema %}
-  {
-    "name": "Sloan Repair Parts",
-    "settings": [
-        {
-            "type": "collection",
-            "id": "feature_collection",
-            "label": "Chose Collection to show on page"
-        }
-    ]
-  }
+    {
+        "blocks": [
+            {
+                "type": "collection",
+                "name": "Sloan Repair Parts"
+            }
+        ],
+        "presets": [
+            {
+                "category": "collections",
+                "name": "Sloan Repair Parts"
+            }
+        ]
+    }
 {% endschema %}
