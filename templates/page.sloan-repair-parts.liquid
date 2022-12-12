@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="{{ 'sloan-repair-parts.scss.css' | asset_url }}">
+
+<div id="sloan-repair-parts-page">
+    <div class="lg-container">
+        <h1>Explore Our Essential Sloan Flush Valve Repair Parts</h1>
+        <p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="repair-parts-collections-container">
+            <div class="repair-part-collection" href="/collections/{{ collections['manual-diaphragm-kits-regal®'].handle }}">
+                <a href="/collections/{{ collections['manual-diaphragm-kits-regal®'].handle }}">
+                    <img src="{{ collections['manual-diaphragm-kits-regal®'].image | img_url: 'master' }}" alt="{{ collections['manual-diaphragm-kits-regal®'].title }}" />
+                    <div class="d-flex flex-row justify-content-center align-items-center w-full">
+                        <p>{{ collections['manual-diaphragm-kits-regal®'].title }}</p>
+                        <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="repair-part-collection" href="/collections/{{ collections['manual-diaphragm-kits-royal®'].handle }}">
+                <a href="/collections/{{ collections['manual-diaphragm-kits-royal®'].handle }}">
+                    <img src="{{ collections['manual-diaphragm-kits-royal®'].image | img_url: 'master' }}" alt="{{ collections['manual-diaphragm-kits-royal®'].title }}" />
+                    <div class="d-flex flex-row justify-content-center align-items-center w-full">
+                        <p>{{ collections['manual-diaphragm-kits-royal®'].title }}</p>
+                        <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="repair-part-collection" href="/collections/{{ collections['diaphragm-kits-sensor'].handle }}">
+                <a href="/collections/{{ collections['diaphragm-kits-sensor'].handle }}">
+                    <img src="{{ collections['diaphragm-kits-sensor'].image | img_url: 'master' }}" alt="{{ collections['diaphragm-kits-sensor'].title }}" />
+                    <div class="d-flex flex-row justify-content-center align-items-center w-full">
+                        <p>{{ collections['diaphragm-kits-sensor'].title }}</p>
+                        <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="repair-part-collection" href="/collections/{{ collections['handles'].handle }}">
+                <a href="/collections/{{ collections['handles'].handle }}">
+                    <img src="{{ collections['handles'].image | img_url: 'master' }}" alt="{{ collections['handles'].title }}" />
+                    <div class="d-flex flex-row justify-content-center align-items-center w-full">
+                        <p>{{ collections['handles'].title }}</p>
+                        <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="repair-part-collection"href="/collections/{{ collections['adjustable-tailpieces'].handle }}">
+                <a href="/collections/{{ collections['adjustable-tailpieces'].handle }}">
+                    <img src="{{ collections['adjustable-tailpieces'].image | img_url: 'master' }}" alt="{{ collections['adjustable-tailpieces'].title }}" />
+                    <div class="d-flex flex-row justify-content-center align-items-center w-full">
+                        <p>{{ collections['adjustable-tailpieces'].title }}</p>
+                        <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+#collection-page {
+
+    .collection-container {
+        padding: 112px 0;
+
+        .collection-title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 56px;
+            margin-bottom: 16px;
+        }
+
+        .collection-sub {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 80px;
+        }
+
+        .collection-nav {
+            width: 30%;
+
+            #collapseSearch {
+
+                .search-container {
+                    border: 1px solid #000;
+                    padding: 12px;
+
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .clear-all {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            .collection-nav-title {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .collection-filter-title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 26px;
+            }
+
+            .accordion-item {
+                border: none;
+            }
+
+            .accordion-button {
+                background: transparent;
+                border: none!important;
+                color: #000;
+                box-shadow: none;
+
+                &::after {
+                    background-image: var(--bs-accordion-btn-icon);
+                }
+            }
+        }
+
+        .collection-right {
+            width: 70%;
+            padding-left: 64px;
+
+            .collection-right-top {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 24px;
+
+                .tags-container {
+                    width: 80%;
+
+                    .tag {
+                        background: #F4F4F4;
+                        padding: 8px 16px;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 18px;
+                        margin-right: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+    
+                .sorting {
+                    width: 20%;
+                    max-width: 300px;
+                    display: flex;
+                    align-items: center;
+    
+                    h2 {
+                        min-width: 75px;
+                    }
+                }
+            }
+
+            .collection-products {
+                flex-wrap: wrap;
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+    
+                .product-card {
+                    width: 300px;
+                }
+            } 
+        }
+    }
+
+}
