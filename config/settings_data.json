@@ -259,6 +259,50 @@
         ],
         "settings": {
         }
+      },
+      "sloan-repair-parts": {
+        "type": "sloan-repair-parts",
+        "blocks": {
+          "3e8548fc-8990-4703-9dcd-41b913a84bec": {
+            "type": "collection",
+            "settings": {
+              "collection": "manual-diaphragm-kits-regal®-1"
+            }
+          },
+          "0f6dd252-7c82-4785-9226-396ea914c97a": {
+            "type": "collection",
+            "settings": {
+              "collection": "manual-diaphragm-kits-royal®"
+            }
+          },
+          "89b837db-e24e-4ff5-a05b-175381580080": {
+            "type": "collection",
+            "settings": {
+              "collection": "diaphragm-kits-sensor"
+            }
+          },
+          "ea2972d4-1151-44cd-aeb3-28e249c6626c": {
+            "type": "collection",
+            "settings": {
+              "collection": "handles"
+            }
+          },
+          "e7cd6b24-df06-423e-8ba9-5ab1be07a170": {
+            "type": "collection",
+            "settings": {
+              "collection": "adjustable-tailpieces"
+            }
+          }
+        },
+        "block_order": [
+          "3e8548fc-8990-4703-9dcd-41b913a84bec",
+          "0f6dd252-7c82-4785-9226-396ea914c97a",
+          "89b837db-e24e-4ff5-a05b-175381580080",
+          "ea2972d4-1151-44cd-aeb3-28e249c6626c",
+          "e7cd6b24-df06-423e-8ba9-5ab1be07a170"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
