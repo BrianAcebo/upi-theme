@@ -292,6 +292,60 @@
             "settings": {
               "collection": "adjustable-tailpieces"
             }
+          },
+          "456ec897-bdf1-4d25-89dd-5d8faafcbdeb": {
+            "type": "collection",
+            "settings": {
+              "collection": "control-stops"
+            }
+          },
+          "b98db800-6649-4fd5-b0e6-6437e6a67006": {
+            "type": "collection",
+            "settings": {
+              "collection": "spud-coupling-assemblies"
+            }
+          },
+          "0cfcfe30-97e9-4863-a907-9da92d5fad36": {
+            "type": "collection",
+            "settings": {
+              "collection": "sweat-solder-kits"
+            }
+          },
+          "a524be5a-a769-4130-be7b-43bc25c42783": {
+            "type": "collection",
+            "settings": {
+              "collection": "solenoid"
+            }
+          },
+          "18dba271-b6d2-4856-b68b-96cc0d50399b": {
+            "type": "collection",
+            "settings": {
+              "collection": "control-modules"
+            }
+          },
+          "cb7e430a-4b11-426c-8ad3-64bc1f95e00e": {
+            "type": "collection",
+            "settings": {
+              "collection": "v-500-aa-vacuum-breaker-tube-assembly"
+            }
+          },
+          "da66520e-4ae2-462e-bf39-38da71e37627": {
+            "type": "collection",
+            "settings": {
+              "collection": "vacuum-breaker-repair-kits"
+            }
+          },
+          "f37f72c1-db77-4b1f-92eb-fe497b372b97": {
+            "type": "collection",
+            "settings": {
+              "collection": "waterfree-urinal"
+            }
+          },
+          "abe07045-0770-449e-bc89-5beb84dada34": {
+            "type": "collection",
+            "settings": {
+              "collection": "gaskets-o-rings-lock-rings-and-seals"
+            }
           }
         },
         "block_order": [
@@ -299,7 +353,16 @@
           "0f6dd252-7c82-4785-9226-396ea914c97a",
           "89b837db-e24e-4ff5-a05b-175381580080",
           "ea2972d4-1151-44cd-aeb3-28e249c6626c",
-          "e7cd6b24-df06-423e-8ba9-5ab1be07a170"
+          "e7cd6b24-df06-423e-8ba9-5ab1be07a170",
+          "456ec897-bdf1-4d25-89dd-5d8faafcbdeb",
+          "b98db800-6649-4fd5-b0e6-6437e6a67006",
+          "0cfcfe30-97e9-4863-a907-9da92d5fad36",
+          "a524be5a-a769-4130-be7b-43bc25c42783",
+          "18dba271-b6d2-4856-b68b-96cc0d50399b",
+          "cb7e430a-4b11-426c-8ad3-64bc1f95e00e",
+          "da66520e-4ae2-462e-bf39-38da71e37627",
+          "f37f72c1-db77-4b1f-92eb-fe497b372b97",
+          "abe07045-0770-449e-bc89-5beb84dada34"
         ],
         "settings": {
         }
