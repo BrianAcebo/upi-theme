@@ -3,7 +3,7 @@
 <div class="in-store-products d-flex flex-wrap w-full justify-content-center">
     {% for block in section.blocks %}
         <div class="product-block">
-            <img src="{{ block.settings.image | img_url: 'master' }}" class="block-img"></div>
+            <img src="{{ block.settings.image | img_url: 'master' }}" class="block-img" />
             <p>{{ block.settings.text }}</p>
         </div>
     {% endfor %}
