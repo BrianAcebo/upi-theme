@@ -432,6 +432,13 @@
               "image": "shopify:\/\/shop_images\/Cast-Iron-Clawfoot-Tubs.jpg",
               "text": "Cast Iron Clawfoot Tubs"
             }
+          },
+          "67b3ce5c-ec24-4dfe-8aa7-d16c909dc52b": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Toilet-repair-parts.jpg",
+              "text": "Toilet Repair Parts"
+            }
           }
         },
         "block_order": [
@@ -443,7 +450,8 @@
           "baa9c15f-8e82-4b69-85a0-e0324568e484",
           "1e29a67b-2e11-4d25-a98a-9049f81fc591",
           "b398ae9b-495d-47b2-82a6-b99573e3d704",
-          "e140c136-6a52-43b6-97d5-31ec854de150"
+          "e140c136-6a52-43b6-97d5-31ec854de150",
+          "67b3ce5c-ec24-4dfe-8aa7-d16c909dc52b"
         ],
         "settings": {
         }
