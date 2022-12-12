@@ -2,7 +2,7 @@
   {% for block in section.blocks %}
     <div class="repair-part-collection">
         <a href="{{ block.settings.collection.handle }}">
-            <img src="{{ block.settings.collection.image | img_url }}" alt="{{ block.settings.collection.title }}" />
+            <img src="{{ block.settings.collection.image | img_url: 'master' }}" alt="{{ block.settings.collection.title }}" />
             <div class="d-flex flex-row justify-content-center align-items-center w-full">
                 <p>{{ block.settings.collection.title }}</p>
                 <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
