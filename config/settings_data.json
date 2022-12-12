@@ -215,37 +215,91 @@
           "6940f016-dcaf-4fe2-b3da-c398da4a8b12": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/example-brand.png"
+              "image": "shopify:\/\/shop_images\/neoperl.png"
             }
           },
           "69897e0c-cdfc-402f-82da-a211e3ea9935": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/example-brand.png"
+              "image": "shopify:\/\/shop_images\/apollo-press.png"
             }
           },
           "6b44688b-adb5-4782-bff5-12594fc6a53c": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/example-brand.png"
+              "image": "shopify:\/\/shop_images\/stiebel-eltron.png"
             }
           },
           "e2c4b683-8181-468f-9c47-6a6cdabdaaa6": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/example-brand.png"
+              "image": "shopify:\/\/shop_images\/fluid-master.png"
             }
           },
           "99e25c63-c232-4541-96ac-2a6673b49e20": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/example-brand.png"
+              "image": "shopify:\/\/shop_images\/korky.png"
             }
           },
           "e5cc8274-83dd-426f-b996-40d6b01a07f9": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/example-brand.png"
+              "image": "shopify:\/\/shop_images\/t-and-s.png"
+            }
+          },
+          "327b3baa-7732-45a6-a4d3-a1136d276e92": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/noritz.jpg"
+            }
+          },
+          "f19f92fc-9611-4b4c-a1f5-223b204903dd": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/oatey.png"
+            }
+          },
+          "1be54b0f-7f95-4a8d-9473-9ab39b8e5679": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/santec.png"
+            }
+          },
+          "024b06e8-013d-4799-99f5-208520bc1251": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/sioux-chief.png"
+            }
+          },
+          "ef55ddb8-4e43-4cb0-b660-f00e82ec9298": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/uponor.png"
+            }
+          },
+          "2500f46e-070f-48e7-a053-3a4c09c1a7ef": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/zurn.png"
+            }
+          },
+          "bc0f5326-c07f-4f34-b35c-ca7a2d2ba720": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/kohler.png"
+            }
+          },
+          "52d9a15f-614a-467e-a641-034879f424d4": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/general-pipe-cleaners.png"
+            }
+          },
+          "f5037553-146a-46c2-a161-45f07554d3c9": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/apollo-powerpress.png"
             }
           }
         },
@@ -255,7 +309,16 @@
           "6b44688b-adb5-4782-bff5-12594fc6a53c",
           "e2c4b683-8181-468f-9c47-6a6cdabdaaa6",
           "99e25c63-c232-4541-96ac-2a6673b49e20",
-          "e5cc8274-83dd-426f-b996-40d6b01a07f9"
+          "e5cc8274-83dd-426f-b996-40d6b01a07f9",
+          "327b3baa-7732-45a6-a4d3-a1136d276e92",
+          "f19f92fc-9611-4b4c-a1f5-223b204903dd",
+          "1be54b0f-7f95-4a8d-9473-9ab39b8e5679",
+          "024b06e8-013d-4799-99f5-208520bc1251",
+          "ef55ddb8-4e43-4cb0-b660-f00e82ec9298",
+          "2500f46e-070f-48e7-a053-3a4c09c1a7ef",
+          "bc0f5326-c07f-4f34-b35c-ca7a2d2ba720",
+          "52d9a15f-614a-467e-a641-034879f424d4",
+          "f5037553-146a-46c2-a161-45f07554d3c9"
         ],
         "settings": {
         }
