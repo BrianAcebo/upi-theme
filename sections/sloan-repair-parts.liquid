@@ -1,12 +1,72 @@
+<div class="repair-parts-collections-container">
+  {% for block in section.blocks %}
+    <div class="repair-part-collection">
+        <a href="{{ block.settings.collection_link }}">
+            <img src="{{ block.settings.collection_image }}" alt="{{ block.settings.collection_title }}" />
+            <div class="d-flex flex-row justify-content-center align-items-center w-full">
+                <p>{{ block.settings.collection_title }}</p>
+                <img class="line-arrow" src="{{ 'line-arrow-right.svg' | file_url }}" alt="arrow right" />
+            </div>
+        </a>
+    </div>
+  {% endfor %}
+</div>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Sloan Repair Parts",
+    "settings": [
+        {
+            "type": "collection",
+            "id": "feature_collection",
+            "label": "Chose Collection to show on page"
+        }
+    ]
   }
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+{%  comment %}
+{% schema %}
+  {
+    "name": "Sloan Repair Parts",
+    "settings": [
+        {
+            "type": "collection",
+            "id": "feature_collection",
+            "label": "Chose Collection to show on page"
+        }
+    ]
+  }
+    {
+        "blocks": [
+            {
+                "type": "collection",
+                "name": "Sloan Repair Parts",
+                "settings": [
+                    {
+                        "type": "link",
+                        "label": "Collection link",
+                        "id": "collection_link"
+                    },
+                    {
+                        "type": "text",
+                        "label": "Collection name",
+                        "id": "collection_title"
+                    },
+                    {
+                        "type": "image",
+                        "label": "Collection image",
+                        "id": "collection_image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "category": "collections",
+                "name": "Sloan Repair Parts"
+            }
+        ]
+    }
+{% endschema %}
+{%  endcomment %}
