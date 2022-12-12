@@ -397,13 +397,21 @@
               "image": "shopify:\/\/shop_images\/John-Guest-OD-Fittings.jpg",
               "text": "John Guest OD Fittings"
             }
+          },
+          "1fa91df8-eb3f-48a1-91a4-351aad3fc0c4": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Press-Fittings-for-Natural-Gas.jpg",
+              "text": "Press Fittings for Natural Gas"
+            }
           }
         },
         "block_order": [
           "4412bb16-60fa-415f-b56e-dca817f4d35f",
           "c25ec74b-b574-41c2-870b-143f11faa439",
           "eda9d2ea-02e0-42a6-9b9d-7601a1b48c24",
-          "b627c3ea-3ffa-45da-b47c-3d05791a7e9f"
+          "b627c3ea-3ffa-45da-b47c-3d05791a7e9f",
+          "1fa91df8-eb3f-48a1-91a4-351aad3fc0c4"
         ],
         "settings": {
         }
