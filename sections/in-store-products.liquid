@@ -1,17 +1,13 @@
 <link rel="stylesheet" href="{{ 'in-store-products.scss.css' | asset_url }}">
 
 <div class="in-store-products d-flex flex-wrap w-full justify-content-center">
-    {% for i in (1..8) %}
+    {% for block in section.blocks %}
         <div class="product-block">
-            <div class="block-img"></div>
-            <p>Decorative Bathroom & Kitchen Trim</p>
+            <img src="{{ block.settings.image | img_url: 'master' }}" class="block-img"></div>
+            <p>{{ block.settings.text }}</p>
         </div>
     {% endfor %}
 </div>
-
-{% for block in section.blocks %}
-    <img src="{{ block.settings.image | img_url: 'master' }}" />
-{% endfor %}
 
 {% schema %}
     {
