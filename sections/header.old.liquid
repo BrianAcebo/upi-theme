@@ -1,0 +1,657 @@
+{{ 'ud-header.scss.css' | asset_url | stylesheet_tag }}
+
+<style>
+  :root {
+    --header-offset: 0;
+  }
+  
+  .header-offset {
+    top: var(--header-offset)
+  }
+
+  .padded-header-offset {
+    top: calc(var(--header-offset) + 1rem);
+  }
+
+</style>
+
+<nav id="Header" class="navbar navbar-expand-lg">
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand py-2" href="/">
+        {% render 'logo-snippet' %}
+    </a>
+
+  <div class="collapse navbar-collapse navbar-collapse-left" id="navbarContent">
+    <button uds-search-link class="btn nav-search d-lg-none mb-3">
+        <img class="mr-2" src="{{ 'CE-Search.svg' | file_url }}" alt="Search" width="18" height="18">
+        Search
+    </button>
+
+    <ul class="navbar-nav main-navbar px-4 pb-5 py-lg-0 pl-lg-0 mr-lg-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link main-link dropdown-toggle" href="/collections/bedding" id="nav-bedding" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bedding
+        </a>
+        <div class="dropdown-menu px-4 px-lg-0 pb-5 pb-lg-0" aria-labelledby="nav-bedding">
+          <div class="row pb-5 py-lg-0 px-lg-5 justify-content-center">
+            <div class="col-12 col-lg-2 py-lg-5">
+              <a href="/collections/bedding" class="nav-list-title">All Bedding</a>
+
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="previous-list">
+                    <button class="btn nav-back-button">
+                      <img src="{{ 'ic_back.svg' | file_url }}" alt="Go Back">
+                    </button>
+
+                    <a href="/collections/bedding" class="nav-link ml-3 mb-2 w-100">All Bedding</a>
+                  </div>
+
+                  <a class="nav-link" href="/products/bamboo-sheet-set">Bamboo Sheet Set</a>
+                  <a class="nav-link" href="/collections/linen-collection">Linen Sheets</a> 
+                  <a class="nav-link" href="/products/comforter">Comforter</a>
+                  <!-- <a class="nav-link" href="/products/silk-comforter">Silk Comforter</a> -->
+                  <a class="nav-link" href="/products/bamboo-duvet-cover">Bamboo Duvet Cover</a>
+                  <a class="nav-link" href="/collections/sheet-separates/">Sheet Separates</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-2 py-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/products/bamboo-mattress-pad">Bamboo Mattress Pad</a>
+                  <a class="nav-link" href="/collections/blankets-and-throws">Blankets and Throws</a> 
+                  <a class="nav-link" href="/products/silk-pillow">Silk Pillow</a>
+                  <a class="nav-link d-none d-lg-block" href="/products/pillow-case-set">Pillowcases</a>
+                  <a class="nav-link d-none d-lg-block" href="/collections/baby">Baby Collection</a>
+                  <a class="nav-link d-none d-lg-block" href="/products/wool-dryer-balls">Wool Dryer Balls</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-2 order-3 order-lg-2 py-lg-5">
+              <p class="nav-list-title">Featured</p>
+
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link d-none d-lg-block" href="/collections/best-sellers">Best Sellers</a>
+                  <a class="nav-link d-lg-none" href="/collections/baby">Baby Collection</a>
+                  <a class="nav-link" href="/collections/new">New Arrivals</a>
+                  <!-- <a class="nav-link" href="/collections/classic">Classic Collection</a> -->
+                  <a class="nav-link d-none d-lg-block" href="/products/gift-card">Gift Cards</a>
+                  <a class="nav-link d-none d-lg-block font-weight-500" href="/pages/bundle">Bundle & Save</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-6 order-2 order-lg-3 py-3 p-lg-5 best-sellers">
+              <p class="nav-link nav-carousel-title">Best Sellers</p>
+              
+              <div class="swiper-container bedding-navigation-carousel">
+                <div class="swiper-wrapper">
+                  {% assign productHandles = 'bamboo-sheet-set, comforter' | split: ', '%}
+
+                  {% for handle in productHandles %}
+                    {% assign product = all_products[handle] %}
+                    <div class="swiper-slide">
+                      <a class="nav-link best-seller-link" href="/products/{{ product.handle }}">
+                        <div class="ud-square-image mb-2">
+                          <img src="{{ product.featured_image | img_url: '300x' }}" alt="Featured Product" width="160">
+
+                          {% if product.tags contains 'new' %}
+                            <img src="{{ 'new-product-badge.svg' | file_url }}" alt="New" style="width: auto; height: 1rem; margin: 0.5rem"/>
+                          {% endif %}
+                        </div>
+                        
+                        {{ product.title | remove: "Women's" | remove: "Ultra-Soft" | remove: "Sleeve" | remove: "Set" | remove: "Men's" | remove: "Stretch-Knit" | remove: "in" }}
+                      </a>
+                    </div>
+                  {% endfor %}
+                  <div class="swiper-slide">
+                    <a class="nav-link best-seller-link" href="/collections/bedding">
+                      <div class="ud-square-image mb-2">
+                        <img src="{{ 'dropdown-Sheets.png' | file_img_url: '300x' }}" alt="All Bath" width="160">
+                      </div>
+                      All Bedding Items
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link main-link dropdown-toggle" href="/collections/bath" id="nav-bedding" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bath <img class="d-lg-none" src="{{ 'new-product-badge.svg' | file_url }}" alt="New" style="width: auto; height: 1rem; margin-left: 0.1rem"/>
+        </a>
+        <div class="dropdown-menu px-4 px-lg-0 pb-5 pb-lg-0" style="min-height: 100%" aria-labelledby="nav-bedding">
+          <div class="row pb-5 py-lg-0 px-lg-5 justify-content-center">
+            <div class="col-12 col-lg-3 py-lg-5">
+              <a href="/collections/bath" class="nav-list-title">All Bath</a>
+
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="previous-list">
+                    <button class="btn nav-back-button">
+                      <img src="{{ 'ic_back.svg' | file_url }}" alt="Go Back">
+                    </button>
+
+                    <a href="/collections/bath" class="nav-link ml-3 mb-2 w-100">All Bath</a>
+                  </div>               
+                  <a class="nav-link" href="/collections/premium-plush-bath-towels">Premium Plush Bath Towels</a>
+                  <a class="nav-link" href="/collections/premium-waffle-bath-collection">Premium Waffle Bath Towels <img src="{{ 'new-product-badge.svg' | file_url }}" alt="New" style="width: auto; height: 1rem; margin: 0.5rem"/></a>
+                  <a class="nav-link" href="/pages/bundle#bath-bundle">Bundle & Save</a>
+
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-2 order-3 order-lg-2 py-lg-5">
+              <p class="nav-list-title">Featured</p>
+
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link d-none d-lg-block" href="/collections/all">Best Sellers</a>
+                  <a class="nav-link" href="/collections/new-bath-arrivals">New Arrivals</a>
+                  <!-- <a class="nav-link" href="/collections/classic">Classic Collection</a> -->
+                  <a class="nav-link d-none d-lg-block" href="/products/gift-card">Gift Cards</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-6 order-2 order-lg-3 py-3 p-lg-5 best-sellers">
+              <p class="nav-link nav-carousel-title">New Releases</p>
+              
+              <div class="swiper-container bath-navigation-carousel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a class="nav-link best-seller-link" href="https://cozyearth.com/pages/bundle?bundle=Premium+Plush+Bundle">
+                        <div class="ud-square-image mb-2">
+                          <img src="{{ 'classic_bath_bundle.jpg' | file_img_url: '300x' }}" alt="Plush Bath Bundle" width="160">
+                        </div>
+                        Plush Bath Bundle
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link best-seller-link" href="https://cozyearth.com/pages/bundle?bundle=Waffle+Bath+Bundle">
+                        <div class="ud-square-image mb-2">
+                          <img src="{{ 'waffleBathBundle.jpg' | file_img_url: '300x' }}" alt="Waffle Bath Bundle" width="160">
+                            <img src="{{ 'new-product-badge.svg' | file_url }}" alt="New" style="width: auto; height: 1rem; margin: 0.5rem"/>
+                        </div>
+                        Waffle Bath Bundle
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link best-seller-link" href="/collections/bath">
+                        <div class="ud-square-image mb-2">
+                          <img src="{{ 'dropdown-Bath.png' | file_img_url: '300x' }}" alt="All Bath" width="160">
+                        </div>
+                        All Bath Items
+                        </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link main-link dropdown-toggle" href="/collections/womens-loungewear" id="nav-womens" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Women
+        </a>
+        <div class="dropdown-menu px-4 px-lg-0 pb-5 pb-lg-0" aria-labelledby="nav-womens">
+          <div class="row pb-5 py-lg-0 px-lg-5 justify-content-center">
+            <div class="col-12 col-lg-2 py-lg-5">
+              <a href="/collections/womens-loungewear" class="nav-list-title">All Women's</a>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="previous-list">
+                    <button class="btn nav-back-button">
+                      <img src="{{ 'ic_back.svg' | file_url }}" alt="Go Back">
+                    </button>
+
+                    <a href="/collections/womens-loungewear" class="nav-link ml-3 mb-2 w-100">All Women's</a>
+                  </div>
+
+                  <a class="nav-link" href="/collections/womens-pajamas">Pajamas</a>
+                  <a class="nav-link" href="/collections/shirts-and-tops">Shirts and Tops</a>
+                  <a class="nav-link" href="/collections/pants-and-shorts">Pants and Shorts</a>
+                  <a class="nav-link" href="/collections/dresses-and-robes">Dresses and Robes</a>
+                  <a class="nav-link" href="/products/premium-scrunchies">Premium Scrunchies</a>
+                  <a class="nav-link" href="/products/the-plush-lounge-sock">Plush Lounge Socks</a>
+                  <a class="nav-link" href="/products/the-plush-modern-crew-sock">Modern Crew Socks</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-2 order-3 order-lg-2 py-lg-5">
+              <p class="nav-list-title">Featured</p>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link d-none d-lg-block" href="/collections/all">Best Sellers</a>
+                  <a class="nav-link" href="/collections/new">New Arrivals</a>
+                  <!-- <a class="nav-link" href="/collections/classic">Classic Collection</a> -->
+                  <a class="nav-link" href="/collections/rib-knit">Rib-Knit Collection </a>
+                  <a class="nav-link" href="/collections/serenity-silk-collection">Serenity Silk Collection <img src="{{ 'new-product-badge.svg' | file_url }}" alt="New" style="width: auto; height: 1rem; margin: 0.5rem"/></a>
+                  <a class="nav-link d-none d-lg-block" href="/products/gift-card">Gift Cards</a>
+                  <a class="nav-link" href="/pages/bundle">Bundle & Save</a>
+                  <a class="nav-link" href="/pages/gift-guide#giftsForHer">Gifts For Her</a>
+                  
+                  {% if settings.we_made_too_much_enable %}<a class="nav-link font-weight-500" href="/collections/online-warehouse-sale">Online Warehouse Sale
+
+                  </a>{% endif %}
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-8 col-xl-6 order-2 order-lg-3 py-3 p-lg-5 best-sellers">
+              <p class="nav-link nav-carousel-title">Best Sellers</p>
+              
+              <div class="swiper-container womens-navigation-carousel">
+                <div class="swiper-wrapper">
+                  {% assign productHandles = 'long-sleeve-bamboo-pajama-set, cozy-earth-ultra-soft-bamboo-jogger-pant' | split: ', '%}
+
+                  {% for handle in productHandles %}
+                    {% assign product = all_products[handle] %}
+                    <div class="swiper-slide">
+                      <a class="nav-link best-seller-link" href="/products/{{ product.handle }}">
+                        <div class="ud-square-image mb-2">
+                          <img src="{{ product.featured_image | img_url: '300x' }}" alt="Featured Product" width="160">
+
+                          {% if product.tags contains 'new' %}
+                            <img src="{{ 'new-product-badge.svg' | file_url }}" alt="New" style="width: auto; height: 1rem; margin: 0.5rem"/>
+                          {% endif %}
+                        </div>
+                        
+                        {{ product.title | remove: "Women's" | remove: "Ultra-Soft" | remove: "Sleeve" | remove: "Set" | remove: "Men's" | remove: "Stretch-Knit" | remove: "in" }}
+                      </a>
+                    </div>
+                  {% endfor %}
+                  <div class="swiper-slide">
+                    <a class="nav-link best-seller-link" href="/collections/womens-loungewear">
+                      <div class="ud-square-image mb-2">
+                        <img src="{{ 'dropdown-Womens.png' | file_img_url: '300x' }}" alt="All Bath" width="160">
+                      </div>
+                      All Women's Items
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link main-link dropdown-toggle" href="/collections/mens-loungewear" id="nav-mens" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Men
+        </a>
+        <div class="dropdown-menu px-4 px-lg-0 pb-5 pb-lg-0" aria-labelledby="nav-mens">
+          <div class="row pb-5 px-lg-5 py-lg-0 justify-content-center">
+            <div class="col-12 col-lg-2 py-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="/collections/mens-loungewear" class="nav-link nav-list-title">All Men's</a>
+
+                  <div class="previous-list">
+                    <button class="btn nav-back-button">
+                      <img src="{{ 'ic_back.svg' | file_url }}" alt="Go Back">
+                    </button>
+
+                    <a href="/collections/mens-loungewear" class="nav-link ml-3 mb-2 w-100">All Men's</a>
+                  </div>
+
+                  <a class="nav-link" href="/collections/mens-pajamas">Pajamas</a>
+                  <a class="nav-link" href="/collections/mens-shirts-and-tops">Shirts and Tops</a>
+                  <a class="nav-link" href="/collections/mens-pants-and-shorts">Pants and Shorts</a>
+                  <a class="nav-link" href="/products/the-plush-lounge-sock">Plush Lounge Socks</a>
+                  <a class="nav-link" href="/products/the-plush-modern-crew-sock">Modern Crew Socks</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-2 order-3 order-lg-2 py-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <p class="nav-link nav-list-title">Featured</p>
+                  <a class="nav-link" href="/collections/all">Best Sellers</a>
+                  <a class="nav-link" href="/collections/new">New Arrivals</a>
+                  <a class="nav-link" href="/products/gift-card">Gift Cards</a>
+                  <a class="nav-link" href="/pages/bundle">Bundle & Save</a>
+                  <a class="nav-link" href="/pages/gift-guide#giftsForHim">Gifts For Him</a>
+
+                  {% if settings.we_made_too_much_enable %}<a class="nav-link font-weight-500" href="/collections/online-warehouse-sale">Online Warehouse Sale!</a>{% endif %}
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-8 col-xl-6 order-2 order-lg-3 py-3 p-lg-5 best-sellers">
+              <p class="nav-link nav-carousel-title">Best Sellers</p>
+              <div class="swiper-container mens-navigation-carousel">
+                <div class="swiper-wrapper">
+                  {% assign productHandles = 'mens-ultra-soft-bamboo-pullover-crew, ultra-soft-bamboo-jogger-pant' | split: ', '%}
+
+                  {% for handle in productHandles %}
+                    {% assign product = all_products[handle] %}
+                    
+                    <div class="swiper-slide">
+                    
+                      <a class="nav-link best-seller-link" href="{% if forloop.index == 2 %} /collections/mens-pajamas {% else %} /products/{{ product.handle }} {% endif %}"> <!-- MEN'S PAJAMA CATEGORY -->
+                        <div class="ud-square-image mb-2">
+                          <img src="{{ product.featured_image | img_url: '300x' }}" alt="Featured Product" width="160">
+
+                          {% if product.tags contains 'new' %}
+                            <img src="{{ 'new-product-badge.svg' | file_url }}" alt="New" style="width: auto; height: 1rem; margin: 0.5rem"/>
+                          {% endif %}
+                        </div>
+                        
+                        {% if forloop.index == 2 %} <!-- MEN'S PAJAMA CATEGORY -->
+                          Men's Bamboo Pajamas
+                        {% else %}
+                          {{ product.title | remove: "Women's" | remove: "Ultra-Soft" | remove: "Sleeve" | remove: "Set" | remove: "Men's" | remove: "Stretch-Knit" | remove: "in" }}
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endfor %}
+                  <div class="swiper-slide">
+                    <a class="nav-link best-seller-link" href="/collections/mens-loungewear">
+                      <div class="ud-square-image mb-2">
+                        <img src="{{ 'dropdown-Mens.png' | file_img_url: '300x' }}" alt="All Bath" width="160">
+                      </div>
+                      All Men's Items
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link main-link" href="/collections/new">New Arrivals</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="header__icons">
+    <details-modal class="header__search">
+      <details>
+        <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+          <span>
+            <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+              <use href="#icon-search">
+            </svg>
+            <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+              <use href="#icon-close">
+            </svg>
+          </span>
+        </summary>
+        <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
+          <div class="modal-overlay"></div>
+          <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
+            {%- if settings.predictive_search_enabled -%}
+              <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+            {%- endif -%}
+              <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+                <div class="field">
+                  <input class="search__input field__input"
+                    id="Search-In-Modal"
+                    type="search"
+                    name="q"
+                    value=""
+                    placeholder="{{ 'general.search.search' | t }}"
+                    {%- if settings.predictive_search_enabled -%}
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-owns="predictive-search-results-list"
+                      aria-controls="predictive-search-results-list"
+                      aria-haspopup="listbox"
+                      aria-autocomplete="list"
+                      autocorrect="off"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                    {%- endif -%}
+                  >
+                  <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
+                  <input type="hidden" name="options[prefix]" value="last">
+                  <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                    <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                      <use href="#icon-search">
+                    </svg>
+                  </button>
+                </div>
+
+                {%- if settings.predictive_search_enabled -%}
+                  <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                    <div class="predictive-search__loading-state">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                {%- endif -%}
+              </form>
+            {%- if settings.predictive_search_enabled -%}
+              </predictive-search>
+            {%- endif -%}
+            <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
+              <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-close">
+              </svg>
+            </button>
+          </div>
+        </div>
+      </details>
+    </details-modal>
+
+    {%- if shop.customer_accounts_enabled -%}
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+        {% render 'icon-account' %}
+        <span class="visually-hidden">
+          {%- liquid
+            if customer
+              echo 'customer.account_fallback' | t
+            else
+              echo 'customer.log_in' | t
+            endif
+          -%}
+        </span>
+      </a>
+    {%- endif -%}
+
+    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      {%- liquid
+        if cart == empty
+          render 'icon-cart-empty'
+        else
+          render 'icon-cart'
+        endif
+      -%}
+      <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+      {%- if cart != empty -%}
+        <div class="cart-count-bubble">
+          {%- if cart.item_count < 100 -%}
+            <span aria-hidden="true">{{ cart.item_count }}</span>
+          {%- endif -%}
+          <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+        </div>
+      {%- endif -%}
+    </a>
+  </div>
+</nav>
+
+<div class="ud-nav-backdrop"></div>
+
+{% render 'login-modal' %}
+
+<template id="loginDropdown">
+  <nav id="accountNav" onclick="event.stopPropagation()">
+    <ul>
+      <li>
+        <a href="/account">Your Account</a>
+      </li>
+      <div class="give-get">
+        <p class="mb-1">
+          Give a $50 Gift Card and Get One Too!
+        </p>
+        <a href="/account#give-get-container">
+          SEE HOW
+        </a>
+      </div>
+      <li>
+        <a href="/account#orderTable">
+          Order History
+        </a>
+      </li>
+      <li>
+        <a href="/pages/favorites">
+          Favorites
+        </a>
+      </li>
+      <li>
+        <a href="/pages/rewards">
+          Cozy Earth Club Rewards
+        </a>
+      </li>
+      <li>
+        <a href="/account/logout">
+          Log Out
+        </a>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<script>
+  function handleLoginDropdown({ timeStamp }) {
+    $(document.body).append($('#loginDropdown').html());
+    
+    const removeNav = (e) => {
+      if (e.timeStamp == timeStamp) return;
+      $('#accountNav').remove();
+      $(document).off("click", removeNav);
+    };
+    
+    $(document).click(removeNav);
+  }
+
+window.addEventListener('DOMContentLoaded', () => {
+
+  $('#navbarContent').on('show.bs.collapse', function () {
+    $('body').addClass('ud-nav-open');
+
+    if($('#promo-bar').length > 0) {
+      PromoBar.hide();
+    }
+
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.position = 'fixed';
+  });
+
+  $('#navbarContent').on('shown.bs.collapse', function () {
+    setNavigationHeight();
+  });
+
+  $('#navbarContent').on('hide.bs.collapse', function () {
+    $('body').removeClass('ud-nav-open');
+    console.log(closed)
+    if($('#promo-bar').length > 0) {
+      let closed = sessionStorage.getItem('promoBarClosed');
+      console.log(closed)
+      if(closed){
+        PromoBar.hide();
+      }
+      else{
+        PromoBar.show();
+      }
+    }
+    
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  });
+
+  $('#Header .dropdown-menu .nav-back-button').click(function() {
+    $(this).parents('.dropdown').find('.dropdown-toggle').dropdown('toggle')
+  });
+
+  var navContentHeight = 0;
+  var dropdownHeight = 0;
+
+  function setNavigationHeight() {
+    if(navContentHeight == 0 && dropdownHeight == 0) {
+      let headerHeight = $('#Header').outerHeight();
+      let searchBarHeight = $('#Header .nav-search').outerHeight();
+      let bottomBarHeight = $('#Header .mobile-bottom-nav').outerHeight();
+      let parentHeight = window.innerHeight - headerHeight;
+      let height = parentHeight - bottomBarHeight - searchBarHeight;
+
+      $('#navbarContent').css('height', window.innerHeight - headerHeight)
+      $('#Header .main-navbar').css('height', height);
+      $('#Header .dropdown-menu').css('height', height);
+
+      navContentHeight = window.innerHeight - headerHeight;
+      dropdownHeight = height;
+    } else {
+      $('#navbarContent').css('height', navContentHeight)
+      $('#Header .main-navbar').css('height', dropdownHeight);
+      $('#Header .dropdown-menu').css('height', dropdownHeight);
+    }
+  }
+
+  if($('#promo-bar').length > 0) {
+    let closed = sessionStorage.getItem('promoBarClosed');
+      if(closed){
+        PromoBar.hide();
+      }
+      else{
+        PromoBar.show();
+      }
+  }
+
+  $('.ud-nav-backdrop').click(function() {
+    $('#navbarContent').collapse('hide');
+  });
+
+  document.querySelector('.ud-nav-backdrop').addEventListener('touchmove', function(e){ e.preventDefault(); });
+
+  $('.main-link.dropdown-toggle').click(function() {
+    if(window.innerWidth > 992) {
+      window.location = $(this).attr('href');
+    }
+  });
+
+  $('#Header .dropdown').mouseenter(function() {
+    if(window.innerWidth > 992) {
+      $(this).find('.dropdown-toggle').dropdown('show');
+    }
+  })
+  .mouseleave(function() {
+    if(window.innerWidth > 992) {
+      setTimeout(() => {
+        if(!$(this).find('.dropdown-menu').is(':hover')) {
+          $(this).find('.dropdown-toggle').dropdown('hide');
+        }
+      }, 250);
+    }
+  });
+
+  $(window).resize(function() {
+    if(window.innerWidth > 992) {
+      $('#navbarContent').css('height', '')
+      $('#Header .main-navbar').css('height', '');
+      $('#Header .dropdown-menu').css('height', '');
+    } else {
+      setNavigationHeight();
+    }
+  });
+});
+</script>

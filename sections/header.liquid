@@ -115,6 +115,8 @@
   }
 {%- endstyle -%}
 
+{{ 'ud-header.scss.css' | asset_url | stylesheet_tag }}
+
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -132,379 +134,213 @@
   </symbol>
 </svg>
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
-  <header class="header">
+  <header class="header navbar navbar-expand-lg" id="Header">
     <div class="lg-container">
-      {%- if section.settings.menu != blank -%}
-        <header-drawer data-breakpoint="tablet">
-          <details id="Details-menu-drawer-container" class="menu-drawer-container">
-            <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
-              <span>
-                {% render 'icon-hamburger' %}
-                {% render 'icon-close' %}
-              </span>
-            </summary>
-            <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
-              <div class="menu-drawer__inner-container">
-                <div class="menu-drawer__navigation-container">
-                  <nav class="menu-drawer__navigation">
-                    <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-                      {%- for link in section.settings.menu.links -%}
-                        <li>
-                          {%- if link.links != blank -%}
-                            <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                              <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
-                                {{ link.title | escape }}
-                                {% render 'icon-arrow' %}
-                                {% render 'icon-caret' %}
-                              </summary>
-                              <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
-                                <div class="menu-drawer__inner-submenu">
-                                  <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                                    {% render 'icon-arrow' %}
-                                    {{ link.title | escape }}
-                                  </button>
-                                  <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                                    {%- for childlink in link.links -%}
-                                      <li>
-                                        {%- if childlink.links == blank -%}
-                                          <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                                            {{ childlink.title | escape }}
-                                          </a>
-                                        {%- else -%}
-                                          <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
-                                            <summary class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                              {{ childlink.title | escape }}
-                                              {% render 'icon-arrow' %}
-                                              {% render 'icon-caret' %}
-                                            </summary>
-                                            <div id="childlink-{{ childlink.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce">
-                                              <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                                                {% render 'icon-arrow' %}
-                                                {{ childlink.title | escape }}
-                                              </button>
-                                              <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                                                {%- for grandchildlink in childlink.links -%}
-                                                  <li>
-                                                    <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
-                                                      {{ grandchildlink.title | escape }}
-                                                    </a>
-                                                  </li>
-                                                {%- endfor -%}
-                                              </ul>
-                                            </div>
-                                          </details>
-                                        {%- endif -%}
-                                      </li>
-                                    {%- endfor -%}
-                                  </ul>
-                                </div>
-                              </div>
-                            </details>
-                          {%- else -%}
-                            <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
-                              {{ link.title | escape }}
-                            </a>
-                          {%- endif -%}
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  </nav>
-                  <div class="menu-drawer__utility-links">
-                    {%- if shop.customer_accounts_enabled -%}
-                      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5">
-                        {% render 'icon-account' %}
-                        {%- liquid
-                          if customer
-                            echo 'customer.account_fallback' | t
-                          else
-                            echo 'customer.log_in' | t
-                          endif
-                        -%}
-                      </a>
-                    {%- endif -%}
-                    <ul class="list list-social list-unstyled" role="list">
-                      {%- if settings.social_twitter_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
-                            {%- render 'icon-twitter' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_facebook_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_facebook_link }}" class="list-social__link link">
-                            {%- render 'icon-facebook' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_pinterest_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_pinterest_link }}" class="list-social__link link">
-                            {%- render 'icon-pinterest' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_instagram_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_instagram_link }}" class="list-social__link link">
-                            {%- render 'icon-instagram' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_tiktok_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_tiktok_link }}" class="list-social__link link">
-                            {%- render 'icon-tiktok' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_tumblr_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_tumblr_link }}" class="list-social__link link">
-                            {%- render 'icon-tumblr' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_snapchat_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_snapchat_link }}" class="list-social__link link">
-                            {%- render 'icon-snapchat' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_youtube_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_youtube_link }}" class="list-social__link link">
-                            {%- render 'icon-youtube' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.social_vimeo_link != blank -%}
-                        <li class="list-social__item">
-                          <a href="{{ settings.social_vimeo_link }}" class="list-social__link link">
-                            {%- render 'icon-vimeo' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                    </ul>
+
+      <div class="w-25 d-flex justify-content-center h-100">
+      {% render 'logo-snippet' %}
+      </div>
+
+      <div class="w-50 collapse navbar-collapse navbar-collapse-left d-flex justify-content-center" id="navbarContent">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link main-link dropdown-toggle" href="/collections/sloan-fixtures" id="nav-fixtures" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sloan Fixtures
+            </a>
+            <div class="dropdown-menu" aria-labelledby="nav-fixtures">
+              <div class="row justify-content-center">
+                <div class="col-12 col-lg-4 py-3 p-lg-5 nav-fixtures-left">
+                  <div class="nav-list-title-container" data-id="navFlush">
+                    <a href="/collections/sloan-flushometers" class="nav-list-title">Sloan Flushometers</a>
+                    <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                  </div>
+                  <div class="nav-list-title-container" data-id="navFaucet">
+                    <a href="/collections/sloan-faucets" class="nav-list-title">Sloan Faucets</a>
+                    <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                  </div>
+                  <div class="nav-list-title-container" data-id="navSoap">
+                    <a href="/collections/sloan-soap-dispensers" class="nav-list-title">Sloan Soap Dispensers</a>
+                    <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-4 py-3 p-lg-5 nav-tabs-middle">
+                  <div class="nav-collection-collections-container col-12 flex-column" data-id="navFlush">
+                    <div class="nav-collection-items-container" id="manualDiParent">
+                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Manual - Diaphragm</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="manualPiParent">
+                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Manual - Piston</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="sensorParent">
+                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Sensor Hardwired/Battery/Solar</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="specialtyParent">
+                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Specialty</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                  </div>
+
+                  <div class="nav-collection-collections-container col-12 flex-column" data-id="navFaucet">
+                    <div class="nav-collection-items-container" id="clarkParent">
+                      <a href="/collections/clark-street" class="nav-collection-items-title">Clark Street</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="rushParent">
+                      <a href="/collections/rush-street" class="nav-collection-items-title">Rush Street</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="premierParent">
+                      <a href="/collections/premier" class="nav-collection-items-title">Premier</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="deluxeParent">
+                      <a href="/collections/deluxe" class="nav-collection-items-title">Deluxe</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="standardParent">
+                      <a href="/collections/standard" class="nav-collection-items-title">Standard</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                  </div>
+
+                  <div class="nav-collection-collections-container col-12 flex-column" data-id="navSoap">
+                    <div class="nav-collection-items-container" id="optimaParent">
+                      <a href="/collections/optima" class="nav-collection-items-title">Optima</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                    <div class="nav-collection-items-container" id="sloanSoapParent">
+                      <a href="/collections/sloan-soap-dispensers" class="nav-collection-items-title">Sloan</a>
+                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="col-12 col-lg-4 py-3 p-lg-5 nav-tabs-right">           
+                  <div class="col-12 d-flex flex-column">
+
+                    <!-- Flushometers -->
+                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="manualDiChild">
+                      <a href="/collections/regal" class="nav-collection-item">Regal</a>
+                      <a href="/collections/royal" class="nav-collection-item">Royal</a>
+                      <a href="/collections/sloan" class="nav-collection-item">Sloan</a>
+                      <a href="/collections/uppercut" class="nav-collection-item">UPPERCUT</a>
+                    </div>
+
+                    <div class="col-12 flex-column nav-collection-items-wrapper" id="manualPiChild">
+                      <a href="/collections/regal" class="nav-collection-item">Crown</a>
+                      <a href="/collections/royal" class="nav-collection-item">Gem-2</a>
+                      <a href="/collections/sloan" class="nav-collection-item">Naval</a>
+                      <a href="/collections/uppercut" class="nav-collection-item">Dolphin</a>
+                      <a href="/collections/cx-series-manual" class="nav-collection-item">CX Series</a>
+                    </div>
+
+                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="sensorChild">
+                      <a href="/collections/g2" class="nav-collection-item">G2</a>
+                      <a href="/collections/ecos" class="nav-collection-item">ECOS</a>
+                      <a href="/collections/solis" class="nav-collection-item">SOLIS</a>
+                      <a href="/collections/optima-regal" class="nav-collection-item">Optima Regal</a>
+                      <a href="/collections/optima-royal" class="nav-collection-item">Optima Royal</a>
+                      <a href="/collections/optima-sloan" class="nav-collection-item">Optima Sloan</a>
+                      <a href="/collections/cx-series-sensor" class="nav-collection-item">CX Series</a>
+                    </div>
+
+                    <div class="col-12 flex-column nav-collection-items-wrapper" id="specialtyChild">
+                      <a href="/collections/slimline" class="nav-collection-item">Slimline</a>
+                      <a href="/collections/footpedal" class="nav-collection-item">Footpedal</a>
+                      <a href="/collections/hydraulic" class="nav-collection-item">Hydraulic</a>
+                      <a href="/collections/concealed" class="nav-collection-item">Concealed</a>
+                      <a href="/collections/exposed" class="nav-collection-item">Exposed</a>
+                      <a href="/collections/side-mount-operator" class="nav-collection-item">Side Mount Operator</a>
+                    </div>
+                    <!-- /Flushometers -->
+
+                    <!-- Faucets -->
+                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="clarkChild">
+                      <a href="/collections/etf-410" class="nav-collection-item">ETF-410</a>
+                      <a href="/collections/ebf-415" class="nav-collection-item">EBF-415</a>
+                    </div>
+
+                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="rushChild">
+                      <a href="/collections/etf-420" class="nav-collection-item">ETF-420</a>
+                      <a href="/collections/ebf-425" class="nav-collection-item">EBF-425</a>
+                    </div>
+
+                    <div class="col-12 flex-column nav-collection-items-wrapper" id="premierChild">
+                      <a href="/collections/bays-high-mount-efx-100-series" class="nav-collection-item">BAYS High Mount EFX 100 Series</a>
+                      <a href="/collections/bays-mid-mount-efx-200-series" class="nav-collection-item">BAYS Mid Mount EFX 200 Series</a>
+                      <a href="/collections/bays-low-mount-efx-300-series" class="nav-collection-item">BAYS Low Mount EFX 300 Series</a>
+                      <a href="/collections/bays-low-mount-with-base-efx-600-series" class="nav-collection-item">BAYS Low Mount with Base EFX 600 Series</a>
+                      <a href="/collections/bays-wall-mount-efx-800-series" class="nav-collection-item">BAYS Wall Mount EFX 800 Series</a>
+                    </div>
+
+                    <div class="col-12 flex-column nav-collection-items-wrapper" id="deluxeChild">
+                      <a href="/collections/eaf-100-150" class="nav-collection-item">EAF-100-150</a>
+                      <a href="/collections/eaf-200-250-275" class="nav-collection-item">EAF-200-250-275</a>
+                      <a href="/collections/eaf-225" class="nav-collection-item">EAF-225</a>
+                      <a href="/collections/eaf-350" class="nav-collection-item">EAF-350</a>
+                      <a href="/collections/eaf-700-750" class="nav-collection-item">EAF-700-750</a>
+                      <a href="/collections/eaf-500-550" class="nav-collection-item">ETF-500-550</a>
+                      <a href="/collections/eaf-800" class="nav-collection-item">ETF-800</a>
+                    </div>
+
+                    <div class="col-12 flex-column nav-collection-items-wrapper" id="standardChild">
+                      <a href="/collections/etf-700-ebf-750" class="nav-collection-item">ETF-700/EBF-750</a>
+                      <a href="/collections/etf-700-s-ebf-750-s" class="nav-collection-item">ETF-700-S/EBF-750-S</a>
+                      <a href="/collections/sloan-sf-2100-2150" class="nav-collection-item">Sloan SF-2100-2150</a>
+                      <a href="/collections/sloan-sf-2200-2250" class="nav-collection-item">Sloan SF-2200-2250</a>
+                      <a href="/collections/sloan-sf-2300-2350" class="nav-collection-item">Sloan SF-2300-2350</a>
+                      <a href="/collections/sloan-sf-2400-2450" class="nav-collection-item">Sloan SF-2400-2450</a>
+                    </div>
+                    <!-- /Faucets -->
+
+                    <!-- Soap Dispensers -->
+                    <div class="col-12 flex-column nav-collection-items-wrapper" id="optimaChild">
+                      <a href="/collections/optima-esd-200" class="nav-collection-item">Optima ESD-200</a>
+                      <a href="/collections/optima-esd-250" class="nav-collection-item">Optima ESD-250</a>
+                    </div>
+
+                    <div class="col-12 flex-column nav-collection-items-wrapper" id="sloanSoapChild">
+                      <a href="/collections/sloan-esd-1500" class="nav-collection-item">Sloan ESD-1500</a>
+                      <a href="/collections/sloan-esd-2000" class="nav-collection-item">Sloan ESD-2000</a>
+                      <a href="/collections/sloan-esd-2100" class="nav-collection-item">Sloan ESD-2100</a>
+                      <a href="/collections/sloan-esd-360" class="nav-collection-item">Sloan ESD-360</a>
+                      <a href="/collections/sloan-esd-400" class="nav-collection-item">Sloan ESD-400</a>
+                      <a href="/collections/sloan-esd-410" class="nav-collection-item">Sloan ESD-410</a>
+                      <a href="/collections/sloan-esd-420" class="nav-collection-item">Sloan ESD-420</a>
+                      <a href="/collections/sloan-esd-500" class="nav-collection-item">Sloan ESD-500</a>
+                      <a href="/collections/sloan-esd-600" class="nav-collection-item">Sloan ESD-600</a>
+                      <a href="/collections/sloan-esd-700" class="nav-collection-item">Sloan ESD-700</a>
+                      <a href="/collections/sloan-esd-800" class="nav-collection-item">Sloan ESD-800</a>
+                    </div>
+                    <!-- /Faucets -->
                   </div>
                 </div>
               </div>
             </div>
-          </details>
-        </header-drawer>
-      {%- endif -%}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link main-link" href="/pages/sloan-repair-parts">Sloan Repair Parts</a>
+          </li>
 
-      {%- if section.settings.logo_position == 'top-center' or section.settings.menu == blank -%}
-        <details-modal class="header__search">
-          <details>
-            <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
-              <span>
-                <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-                  <use href="#icon-search">
-                </svg>
-                <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false" role="presentation">
-                  <use href="#icon-close">
-                </svg>
-              </span>
-            </summary>
-            <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
-              <div class="modal-overlay"></div>
-              <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
-                {%- if settings.predictive_search_enabled -%}
-                  <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
-                {%- endif -%}
-                  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
-                    <div class="field">
-                      <input class="search__input field__input"
-                        id="Search-In-Modal-1"
-                        type="search"
-                        name="q"
-                        value=""
-                        placeholder="{{ 'general.search.search' | t }}"
-                        {%- if settings.predictive_search_enabled -%}
-                          role="combobox"
-                          aria-expanded="false"
-                          aria-owns="predictive-search-results-list"
-                          aria-controls="predictive-search-results-list"
-                          aria-haspopup="listbox"
-                          aria-autocomplete="list"
-                          autocorrect="off"
-                          autocomplete="off"
-                          autocapitalize="off"
-                          spellcheck="false"
-                        {%- endif -%}
-                      >
-                      <label class="field__label" for="Search-In-Modal-1">{{ 'general.search.search' | t }}</label>
-                      <input type="hidden" name="options[prefix]" value="last">
-                      <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                        <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-                          <use href="#icon-search">
-                        </svg>
-                      </button>
-                    </div>
+          <li class="nav-item">
+            <a class="nav-link main-link" href="/collections/plumbing-toiletry-accessories">Plumbing & Toiletry Accessories </a>
+          </li>
 
-                    {%- if settings.predictive_search_enabled -%}
-                      <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
-                        <div class="predictive-search__loading-state">
-                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                          </svg>
-                        </div>
-                      </div>
+          <li class="nav-item">
+            <a class="nav-link main-link" href="/pages/resources">Resources</a>
+          </li>
 
-                      <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
-                    {%- endif -%}
-                  </form>
-                {%- if settings.predictive_search_enabled -%}
-                  </predictive-search>
-                {%- endif -%}
-                <button type="button" class="modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
-                  <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
-                    <use href="#icon-close">
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </details>
-        </details-modal>
-      {%- endif -%}
+          <li class="nav-item">
+            <a class="nav-link main-link" href="/pages/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
 
-      {% render 'logo-snippet' %}
-
-      {%- if section.settings.menu != blank -%}
-        {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-          <nav class="dekstop-menu">
-            <ul class="list-menu list-menu--inline" role="list">
-              {%- for link in section.settings.menu.links -%}
-                <li>
-                  {%- if link.links != blank -%}
-                    <header-menu>
-                      <details id="Details-HeaderMenu-{{ forloop.index }}">
-                        <summary class="header__menu-item list-menu__item link focus-inset">
-                          <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                          {% render 'icon-caret' %}
-                        </summary>
-                        <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
-                          {%- for childlink in link.links -%}
-                            <li>
-                              {%- if childlink.links == blank -%}
-                                <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                                  {{ childlink.title | escape }}
-                                </a>
-                              {%- else -%}
-                                <details id="Details-HeaderSubMenu-{{ forloop.index }}">
-                                  <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
-                                    <span>{{ childlink.title | escape }}</span>
-                                    {% render 'icon-caret' %}
-                                  </summary>
-                                  <ul id="HeaderMenu-SubMenuList-{{ forloop.index }}" class="header__submenu list-menu motion-reduce">
-                                    {%- for grandchildlink in childlink.links -%}
-                                      <li>
-                                        <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
-                                          {{ grandchildlink.title | escape }}
-                                        </a>
-                                      </li>
-                                    {%- endfor -%}
-                                  </ul>
-                                </details>
-                              {%- endif -%}
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      </details>
-                    </header-menu>
-                  {%- else -%}
-                    <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
-                      <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                    </a>
-                  {%- endif -%}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </nav>
-        {%- else -%}
-          <nav>
-            <ul class="list-menu list-menu--inline" role="list">
-              {%- for link in section.settings.menu.links -%}
-                <li>
-                  {%- if link.links != blank -%}
-                    <header-menu>
-                      <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
-                        <summary class="header__menu-item list-menu__item link focus-inset">
-                          <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                          {% render 'icon-caret' %}
-                        </summary>
-                        <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup" tabindex="-1">
-                          <ul class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
-                            {%- for childlink in link.links -%}
-                              <li>
-                                <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                                  {{ childlink.title | escape }}
-                                </a>
-                                {%- if childlink.links != blank -%}
-                                  <ul class="list-unstyled" role="list">
-                                    {%- for grandchildlink in childlink.links -%}
-                                      <li>
-                                        <a href="{{ grandchildlink.url }}" class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
-                                          {{ grandchildlink.title | escape }}
-                                        </a>
-                                      </li>
-                                    {%- endfor -%}
-                                  </ul>
-                                {%- endif -%}
-                              </li>
-                            {%- endfor -%}
-                          </ul>
-                        </div>
-                      </details>
-                    </header-menu>
-                  {%- else -%}
-                    <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
-                      <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                    </a>
-                  {%- endif -%}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </nav>
-        {%- endif -%}
-      {%- endif -%}
-
-      {%- if section.settings.logo_position == 'middle-center' -%}
-        {%- if request.page_type == 'index' -%}
-          <h1 class="header__heading">
-        {%- endif -%}
-            <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-              {%- if section.settings.logo != blank -%}
-                {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
-                {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
-                  class: 'header__heading-logo',
-                  widths: '50, 100, 150, 200, 250, 300, 400, 500',
-                  height: logo_height,
-                  width: section.settings.logo_width,
-                  alt: logo_alt
-                }}
-              {%- else -%}
-                <span class="h2">{{ shop.name }}</span>
-              {%- endif -%}
-            </a>
-        {%- if request.page_type == 'index' -%}
-          </h1>
-        {%- endif -%}
-      {%- endif -%}
-
-      <div class="header__icons">
+      <div class="header__icons w-25 d-flex justify-content-center h-100">
         <details-modal class="header__search">
           <details>
             <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
@@ -712,37 +548,6 @@
   customElements.define('sticky-header', StickyHeader);
 {% endjavascript %}
 
-<script>
-  $(document).ready(function(){
-    $("dropdown-btn").hover(function() {
-      $(this).find('dropdown-menu').css({ 'display', 'block'};)
-    }).
-  });
-</script>
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": {{ shop.name | json }},
-    {% if section.settings.logo %}
-      "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
-    {% endif %}
-    "sameAs": [
-      {{ settings.social_twitter_link | json }},
-      {{ settings.social_facebook_link | json }},
-      {{ settings.social_pinterest_link | json }},
-      {{ settings.social_instagram_link | json }},
-      {{ settings.social_tiktok_link | json }},
-      {{ settings.social_tumblr_link | json }},
-      {{ settings.social_snapchat_link | json }},
-      {{ settings.social_youtube_link | json }},
-      {{ settings.social_vimeo_link | json }}
-    ],
-    "url": {{ request.origin | append: page.url | json }}
-  }
-</script>
-
 {%- if request.page_type == 'index' -%}
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
@@ -929,3 +734,140 @@
   ]
 }
 {% endschema %}
+
+<script>
+  function handleLoginDropdown({ timeStamp }) {
+    $(document.body).append($('#loginDropdown').html());
+    
+    const removeNav = (e) => {
+      if (e.timeStamp == timeStamp) return;
+      $('#accountNav').remove();
+      $(document).off("click", removeNav);
+    };
+    
+    $(document).click(removeNav);
+  }
+
+window.addEventListener('DOMContentLoaded', () => {
+
+  $('.nav-list-title-container').each(function() { 
+    $(this).hover(function() {
+      $('.nav-collection-collections-container').css('display', 'none');
+      $('.nav-collection-items-wrapper').css('display', 'none');
+       
+      const tabId = $(this).attr('data-id');
+      const middleNav = `.nav-tabs-middle .nav-collection-collections-container[data-id="${tabId}"]`;
+      const childId = $(middleNav).children(':first').attr('id').replace('Parent', 'Child');
+      const rightNav = `.nav-tabs-right #${childId}`;
+
+      $(middleNav).css('display', 'block');
+      $(rightNav).css('display', 'flex');
+    });
+  });
+
+  $('.nav-collection-items-container').each(function() { 
+    $(this).hover(function() {
+      $('.nav-collection-items-wrapper').css('display', 'none');
+       
+      const childId = $(this).attr('id').replace('Parent', 'Child');
+      const rightNav = `.nav-tabs-right #${childId}`;
+
+      $(rightNav).css('display', 'flex');
+    });
+  });
+
+  $('#navbarContent').on('show.bs.collapse', function () {
+    $('body').addClass('ud-nav-open');
+
+    if($('#promo-bar').length > 0) {
+      PromoBar.hide();
+    }
+
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.position = 'fixed';
+  });
+
+  $('#navbarContent').on('shown.bs.collapse', function () {
+    setNavigationHeight();
+  });
+
+  $('#navbarContent').on('hide.bs.collapse', function () {
+    $('body').removeClass('ud-nav-open');
+    console.log(closed)
+    if($('#promo-bar').length > 0) {
+      let closed = sessionStorage.getItem('promoBarClosed');
+      console.log(closed)
+      if(closed){
+        PromoBar.hide();
+      }
+      else{
+        PromoBar.show();
+      }
+    }
+    
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  });
+
+  $('#Header .dropdown-menu .nav-back-button').click(function() {
+    $(this).parents('.dropdown').find('.dropdown-toggle').dropdown('toggle')
+  });
+
+  var navContentHeight = 0;
+  var dropdownHeight = 0;
+
+  function setNavigationHeight() {
+    if(navContentHeight == 0 && dropdownHeight == 0) {
+      let headerHeight = $('#Header').outerHeight();
+      let searchBarHeight = $('#Header .nav-search').outerHeight();
+      let bottomBarHeight = $('#Header .mobile-bottom-nav').outerHeight();
+      let parentHeight = window.innerHeight - headerHeight;
+      let height = parentHeight - bottomBarHeight - searchBarHeight;
+
+      $('#navbarContent').css('height', window.innerHeight - headerHeight)
+      $('#Header .main-navbar').css('height', height);
+      $('#Header .dropdown-menu').css('height', height);
+
+      navContentHeight = window.innerHeight - headerHeight;
+      dropdownHeight = height;
+    } else {
+      $('#navbarContent').css('height', navContentHeight)
+      $('#Header .main-navbar').css('height', dropdownHeight);
+      $('#Header .dropdown-menu').css('height', dropdownHeight);
+    }
+  }
+
+  $('.main-link.dropdown-toggle').click(function() {
+    if(window.innerWidth > 992) {
+      window.location = $(this).attr('href');
+    }
+  });
+
+  $('#Header .dropdown').mouseenter(function() {
+    if(window.innerWidth > 992) {
+      $(this).find('.dropdown-toggle').dropdown('show');
+    }
+  })
+  .mouseleave(function() {
+    if(window.innerWidth > 992) {
+      setTimeout(() => {
+        if(!$(this).find('.dropdown-menu').is(':hover')) {
+          $(this).find('.dropdown-toggle').dropdown('hide');
+        }
+      }, 250);
+    }
+  });
+
+  $(window).resize(function() {
+    if(window.innerWidth > 992) {
+      $('#navbarContent').css('height', '')
+      $('#Header .main-navbar').css('height', '');
+      $('#Header .dropdown-menu').css('height', '');
+    } else {
+      setNavigationHeight();
+    }
+  });
+});
+</script>
