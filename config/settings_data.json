@@ -404,6 +404,13 @@
               "image": "shopify:\/\/shop_images\/Press-Fittings-for-Natural-Gas.jpg",
               "text": "Press Fittings for Natural Gas"
             }
+          },
+          "baa9c15f-8e82-4b69-85a0-e0324568e484": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Pneumatic-Test-Balls.jpg",
+              "text": "Pneumatic Test Balls"
+            }
           }
         },
         "block_order": [
@@ -411,7 +418,8 @@
           "c25ec74b-b574-41c2-870b-143f11faa439",
           "eda9d2ea-02e0-42a6-9b9d-7601a1b48c24",
           "b627c3ea-3ffa-45da-b47c-3d05791a7e9f",
-          "1fa91df8-eb3f-48a1-91a4-351aad3fc0c4"
+          "1fa91df8-eb3f-48a1-91a4-351aad3fc0c4",
+          "baa9c15f-8e82-4b69-85a0-e0324568e484"
         ],
         "settings": {
         }
