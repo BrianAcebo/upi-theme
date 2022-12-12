@@ -376,10 +376,18 @@
               "image": "shopify:\/\/shop_images\/Decorative-Bathroom-Kitchen-Trim.jpg",
               "text": "Decorative Bathroom & Kitchen Trim"
             }
+          },
+          "c25ec74b-b574-41c2-870b-143f11faa439": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Huge-Selection-of-Faucet-Toilet-Repair-Parts.jpg",
+              "text": "Huge Selection of Faucet & Toilet Repair Parts"
+            }
           }
         },
         "block_order": [
-          "4412bb16-60fa-415f-b56e-dca817f4d35f"
+          "4412bb16-60fa-415f-b56e-dca817f4d35f",
+          "c25ec74b-b574-41c2-870b-143f11faa439"
         ],
         "settings": {
         }
