@@ -1,7 +1,7 @@
 <div class="repair-parts-collections-container">
   {% for block in section.blocks %}
     <div class="repair-part-collection">
-        <a href="{{ block.settings.collection.handle }}">
+        <a href="/collections/{{ block.settings.collection.handle }}">
             <img src="{{ block.settings.collection.image | img_url: 'master' }}" alt="{{ block.settings.collection.title }}" />
             <div class="d-flex flex-row justify-content-center align-items-center w-full">
                 <p>{{ block.settings.collection.title }}</p>
