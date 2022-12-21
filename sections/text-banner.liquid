@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="{{ 'text-banner.css' | asset_url }}">
+
+<div id="text-banner">
+  <h2 class="header">{{ section.settings.header }}</h2>
+  <p class="paragraph">{{ section.settings.text }}</p>
+  <a class="link" href="{{ section.settings.cta_url }}">{{ section.settings.cta_text }}</a>
+</div>
+
+{% schema %}
+{
+  "name": "Text Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "CTA Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Banner"
+    }
+  ]
+}
+{% endschema %}

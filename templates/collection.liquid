@@ -4,39 +4,88 @@
 
     {% render 'breadcrumbs' %}
 
-    <div class="lg-container">
+    <div class="collection-container">
 
-        <div class="collection-container">
-            <h1 class="collection-title">{{ collection.title }}</h1>
-            <p class="collection-sub">Lorem ipsum dolor sit amet.</p>
+        <div class="lg-container">
+            {% if collection.handle == 'all' %}
+                <h1 class="collection-title">All Products</h1>
+            {% else %}
+                <h1 class="collection-title">{{ collection.title }}</h1>
+            {% endif %}
+            
+            <p class="collection-sub">{{ collection.description }}</p>
 
 
             <div class="collection-wrapper d-flex flex-lg-row flex-column">
                 <div class="collection-nav">
 
-                    <div class="d-flex justify-content-between align-items-end">
+                    <div class="d-flex justify-content-between align-items-center">
                         <h2 class="collection-nav-title">Filters</h2>
-                        <p class="clear-all">Clear all</p>
+                        <a href="{{ collection.url }}" class="clear-all">Clear all</a>
                     </div>
 
-                    <hr />
+                    <hr class="mb-4" />
 
                     <div class="collection-accordions">
                         <div class="accordion">
 
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="searchHeading">
+                            <div class="accordion-item mb-4">
+                                <h2 class="accordion-header mb-4" id="searchHeading">
                                     <button class="accordion-button collection-nav-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="true" aria-controls="collapseSearch">Search</button>
                                 </h2>
                                 <div id="collapseSearch" class="accordion-collapse collapse show" aria-labelledby="searchHeading" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="d-flex flex-row justify-content-between search-container">
-                                            <div class="acc-list">
+                                            <div class="acc-list w-100">
                                                 <div class="d-flex flex-row">
-                                                    <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-                                                        <use href="#icon-search">
-                                                    </use></svg>
-                                                    <input type="text" placeholder="Keyword">
+                                                    {%- if settings.predictive_search_enabled -%}
+                                                        <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+                                                      {%- endif -%}
+                                                        <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+                                                          <div class="field">
+                                                            <input class="search__input field__input"
+                                                              id="Search-In-Modal"
+                                                              type="search"
+                                                              name="q"
+                                                              value=""
+                                                              placeholder="{{ 'general.search.keyword' | t }}"
+                                                              {%- if settings.predictive_search_enabled -%}
+                                                                role="combobox"
+                                                                aria-expanded="false"
+                                                                aria-owns="predictive-search-results-list"
+                                                                aria-controls="predictive-search-results-list"
+                                                                aria-haspopup="listbox"
+                                                                aria-autocomplete="list"
+                                                                autocorrect="off"
+                                                                autocomplete="off"
+                                                                autocapitalize="off"
+                                                                spellcheck="false"
+                                                              {%- endif -%}
+                                                            >
+                                                            <label class="field__label" for="Search-In-Modal">Keyword</label>
+                                                            <input type="hidden" name="options[prefix]" value="last">
+                                                            <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                                                              <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                                                                <use href="#icon-search">
+                                                              </svg>
+                                                            </button>
+                                                          </div>
+                                      
+                                                          {%- if settings.predictive_search_enabled -%}
+                                                            <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                                                              <div class="predictive-search__loading-state">
+                                                                <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                                                                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                                                                </svg>
+                                                              </div>
+                                                            </div>
+                                      
+                                                            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                                                          {%- endif -%}
+                                                        </form>
+                                                    {%- if settings.predictive_search_enabled -%}
+                                                    </predictive-search>
+                                                    {%- endif -%}
                                                 </div>
                                             </div>
                                         </div>
@@ -44,31 +93,9 @@
                                 </div>
                             </div>
 
-                            <hr />
+                            <hr class="mb-4" />
 
-                            <h2 class="collection-nav-title">Products</h2>
-
-                            {% for link in linklists.main-menu.links %}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading{{ forloop.index }}">
-                                        <button class="accordion-button collection-filter-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}" aria-expanded="true" aria-controls="collapse{{ forloop.index }}">{{ link.title }}</button>
-                                    </h2>
-                                    <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div class="d-flex flex-row justify-content-between">
-                                                <div class="acc-list">
-                                                    <ul>
-                                                        <li>Royal</li>
-                                                        <li>Regal</li>
-                                                        <li>Gem</li>
-                                                        <li>Crown</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
+                            {% section 'collection-filters-nav' %}
                         </div>
                     </div>
                 </div>
@@ -77,33 +104,54 @@
                     <div class="collection-right-top">
 
                         <div class="tags-container d-flex flex-row">
-                            <div class="tag">Royal</div>
-                            <div class="tag">Royal</div>
+                            {% if current_tags %}
+                                {% for tag in current_tags %}
+                                    <div class="tag">
+                                        {{ tag }} 
+                                        <span>{{ 'x' | link_to_remove_tag: tag }}</span>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                            <div class="tag">
+                                {{ tag }} 
+                                <span>All</span>
+                            </div>
+                            {% endif %}
                         </div>
 
                         <div class="facet-filters sorting caption">
                             <div class="facet-filters__field d-flex flex-row">
-                            <h2 class="facet-filters__label caption-large text-body">
-                                <label for="SortBy">Sort by:</label>
-                            </h2>
-                            <div class="select"><select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message"><option value="manual">Featured</option><option value="best-selling" selected="selected">Best selling</option><option value="title-ascending">Alphabetically, A-Z</option><option value="title-descending">Alphabetically, Z-A</option><option value="price-ascending">Price, low to high</option><option value="price-descending">Price, high to low</option><option value="created-ascending">Date, old to new</option><option value="created-descending">Date, new to old</option></select>
-                                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
-                                </svg>
+                                <h2 class="d-flex align-items-center m-0 facet-filters__label caption-large text-body">
+                                    <label for="SortBy">Sort by:</label>
+                                </h2>
+                                <div class="select">
+                                    <select name="sort_by" class="sort-by facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
+                                        <option value="manual">Featured</option>
+                                        <option value="best-selling" selected="selected">Best selling</option>
+                                        <option value="title-ascending">Alphabetically, A-Z</option>
+                                        <option value="title-descending">Alphabetically, Z-A</option>
+                                        <option value="price-ascending">Price, low to high</option>
+                                        <option value="price-descending">Price, high to low</option>
+                                        <option value="created-ascending">Date, old to new</option>
+                                        <option value="created-descending">Date, new to old</option>
+                                    </select>
+                                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
                             </div>
-                            </div>
-            
-                            <noscript>
-                            <button type="submit" class="facets__button-no-js button button--secondary">Sort</button>
-                            </noscript>
                         </div>
                     </div>
 
-                    <div class="collection-products">
-                        {% for product in collection.products %}
-                            {% render 'product-card', name: product.title, price: product.price %}
-                        {% endfor %}
-                    </div>
+                    {% paginate collection.products by 12 %}
+                        <div class="collection-products">
+                            {% for product in collection.products %}
+                                {% render 'product-card', product: product %}
+                            {% endfor %}
+                        </div>
+
+                        {% render 'pagination' %}
+                    {% endpaginate %}
                 </div>
             </div>
         </div>
@@ -114,4 +162,25 @@
     </div>
 
 </div>
+
+
+<script type="text/javascript">
+    // Save existing sort parameters
+    Shopify.queryParams = {};
+    if(location.search.length) {
+      for(var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+        aKeyValue = aCouples[i].split('=');
+        if (aKeyValue.length > 1) {
+          Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+        }
+      }
+    }
+  
+    // Add existing sort parameters to current URL
+    document.querySelector('.sort-by').addEventListener('change', function(e) {
+      var value = e.currentTarget.value;
+      Shopify.queryParams.sort_by = value;
+      location.search = new URLSearchParams(Shopify.queryParams).toString();
+    });
+</script>
   

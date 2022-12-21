@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="{{ 'product-card.scss.css' | asset_url }}">
 
-<div class="product-card">
-    <div class="img-container">
-        <img src="{{ 'test-product-2.jpg' | file_img_url: '600x600' }}" alt="team">
+<a href="{{ product.url }}">
+    <div class="product-card">
+        <div class="img-container">
+            <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
+        </div>
+        <h4 class="name">{{ product.title }}</h4>
+        <strong class="price">{{ product.price | money }}</strong>
     </div>
-    <h4 class="name">{{ name }}</h4>
-    <p class="description">{{ description }}</p>
-    <strong class="price">${{ price }}</strong>
-</div>
+</a>

@@ -17,9 +17,9 @@
     <!-- Slider main container -->
     <div class="swiper" id="product-carousel">
         <div class="swiper-wrapper">
-            {% for i in (1..5) %}
+            {% for product in collections['sloan-flushometers'].products %}
                 <div class="swiper-slide">
-                    {% render 'product-card', name: 'A-1037-A', description: 'Royal® Urinal Diaphragm Assembly 1.5 gpf', price: '55' %}
+                    {% render 'product-card', product: product %}
                 </div>
             {% endfor %}
         </div>
@@ -39,7 +39,7 @@
     const product_carousel = new Swiper('#product-carousel', {
         slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 48,
+        spaceBetween: 0,
         loop: true,
         preventClicks: false,
 

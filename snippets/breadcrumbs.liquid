@@ -28,7 +28,7 @@
           <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" style="margin-right: 14px;">
       
           <li>
-            <a href="/shop" aria-current="shop">Shop All</a>
+            <a href="/collections/all" aria-current="shop">Shop All</a>
           </li>
 
           <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" style="margin-right: 14px;">
@@ -46,11 +46,20 @@
           </li>
       
         {% when 'collection' and collection.handle %}
+
+          <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" style="margin-right: 14px;">
+
+          <li>
+            <a href="/collections/all" aria-current="shop">Shop All</a>
+          </li>
       
           {% if current_tags %}
-            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" style="margin-right: 14px;">
 
-            <li>{{ collection.title | link_to: collection.url }}</li>
+            {% if collection.handle == 'all' %}
+            {% else %}
+            <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" style="margin-right: 14px;">
+              <li>{{ collection.title | link_to: collection.url }}</li>
+            {% endif %}
 
             <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" style="margin-right: 14px;">
 

@@ -1,0 +1,581 @@
+{% assign ending_path = request.path | split: '/' | last %}
+
+<h2 class="collection-nav-title mb-4">Products</h2>
+
+<!-- Sloan Repair Parts -->
+<div class="accordion-item mb-4" id="acc1">
+    <h2 class="accordion-header acc-main-header" id="headingRepairParts">
+        <button class="accordion-button collection-filter-tag{% if collection.handle == 'sloan-repair-parts' %}{% else %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRepairParts" aria-expanded="false" aria-controls="collapseRepairParts">Sloan Repair Parts</button>
+    </h2>
+    <div id="collapseRepairParts" class="accordion-collapse collapse{% if collection.handle == 'sloan-repair-parts' %} show{% endif %}" aria-labelledby="headingRepairParts" data-bs-parent="#acc1">
+        <div class="accordion-body ps-3 pt-3 pb-3">
+            <div class="accordion-item mb-4" id="acc-1-1">
+                <h2 class="accordion-header" id="headingManualFlushParts">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManualFlushParts" aria-expanded="true" aria-controls="collapseManualFlushParts">Manual Flushometer Parts</button>
+                </h2>
+                <div id="collapseManualFlushParts" class="accordion-collapse collapse" aria-labelledby="headingManualFlushParts" data-bs-parent="#acc-1-1">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'manual-flushometer-parts' %}
+                                    <ul>
+                                        <li>{{ 'Regal' | link_to_add_tag: 'Regal' }}</li>
+                                        <li>{{ 'Royal' | link_to_add_tag: 'Royal' }}</li>
+                                        <li>{{ 'Sloan' | link_to_add_tag: 'Sloan' }}</li>
+                                        <li>{{ 'Uppercut' | link_to_add_tag: 'Uppercut' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/manual-flushometer-parts/regal">Regal</a></li>
+                                        <li><a href="/collections/manual-flushometer-parts/royal">Royal</a></li>
+                                        <li><a href="/collections/manual-flushometer-parts/sloan">Sloan</a></li>
+                                        <li><a href="/collections/manual-flushometer-parts/uppercut">Uppercut</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'manual-flushometer-parts' %}
+                                    <ul>
+                                        <li>{{ 'Crown' | link_to_add_tag: 'Crown' }}</li>
+                                        <li>{{ 'Gem-2' | link_to_add_tag: 'Gem-2' }}</li>
+                                        <li>{{ 'Naval' | link_to_add_tag: 'Naval' }}</li>
+                                        <li>{{ 'Dolphin' | link_to_add_tag: 'Dolphin' }}</li>
+                                        <li>{{ 'CX Series' | link_to_add_tag: 'CX Series' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/manual-flushometer-parts/crown">Crown</a></li>
+                                        <li><a href="/collections/manual-flushometer-parts/gem-2">Gem-2</a></li>
+                                        <li><a href="/collections/manual-flushometer-parts/naval">Naval</a></li>
+                                        <li><a href="/collections/manual-flushometer-parts/dolphin">Dolphin</a></li>
+                                        <li><a href="/collections/manual-flushometer-parts/cx-series">CX Series</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-1-2">
+                <h2 class="accordion-header" id="headingSensorFlushParts">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSensorFlushParts" aria-expanded="true" aria-controls="collapseSensorFlushParts">Sensor Flushometer Parts</button>
+                </h2>
+                <div id="collapseSensorFlushParts" class="accordion-collapse collapse" aria-labelledby="headingSensorFlushParts" data-bs-parent="#acc-1-2">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'sensor-flushometer-parts' %}
+                                    <ul>
+                                        <li>{{ 'G2' | link_to_add_tag: 'G2' }}</li>
+                                        <li>{{ 'ECOS' | link_to_add_tag: 'ECOS' }}</li>
+                                        <li>{{ 'SOLIS' | link_to_add_tag: 'SOLIS' }}</li>
+                                        <li>{{ 'Optima Regal' | link_to_add_tag: 'Optima Regal' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/sensor-flushometer-parts/g2">G2</a></li>
+                                        <li><a href="/collections/sensor-flushometer-parts/ecos">ECOS</a></li>
+                                        <li><a href="/collections/sensor-flushometer-parts/solis">SOLIS</a></li>
+                                        <li><a href="/collections/sensor-flushometer-parts/optima-regal">Optima Regal</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'sensor-flushometer-parts' %}
+                                    <ul>
+                                        <li>{{ 'Optima Royal' | link_to_add_tag: 'Optima Royal' }}</li>
+                                        <li>{{ 'Optima Sloan' | link_to_add_tag: 'Optima Sloan' }}</li>
+                                        <li>{{ 'CX Series' | link_to_add_tag: 'CX Series' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/sensor-flushometer-parts/optima-royal">Optima Royal</a></li>
+                                        <li><a href="/collections/sensor-flushometer-parts/optima-sloan">Optima Sloan</a></li>
+                                        <li><a href="/collections/sensor-flushometer-parts/cx-series">CX Series</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-1-2">
+                <h2 class="accordion-header" id="headingSpecialtyFlushParts">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecialtyFlushParts" aria-expanded="true" aria-controls="collapseSpecialtyFlushParts">Specialty Flushometer Parts</button>
+                </h2>
+                <div id="collapseSpecialtyFlushParts" class="accordion-collapse collapse" aria-labelledby="headingSpecialtyFlushParts" data-bs-parent="#acc-1-2">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'specialty-flushometer-parts' %}
+                                    <ul>
+                                        <li>{{ 'Slimeline' | link_to_add_tag: 'Slimeline' }}</li>
+                                        <li>{{ 'Footpedal' | link_to_add_tag: 'Footpedal' }}</li>
+                                        <li>{{ 'Hydraulic' | link_to_add_tag: 'Hydraulic' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/specialty-flushometer-parts/slimeline">Slimeline</a></li>
+                                        <li><a href="/collections/specialty-flushometer-parts/footpedal">Footpedal</a></li>
+                                        <li><a href="/collections/specialty-flushometer-parts/hydraulic">Hydraulic</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'specialty-flushometer-parts' %}
+                                    <ul>
+                                        <li>{{ 'Concealed' | link_to_add_tag: 'Concealed' }}</li>
+                                        <li>{{ 'Exposed' | link_to_add_tag: 'Exposed' }}</li>
+                                        <li>{{ 'Side Mount Operator' | link_to_add_tag: 'Side Mount Operator' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/specialty-flushometer-parts/concealed">Concealed</a></li>
+                                        <li><a href="/collections/specialty-flushometer-parts/exposed">Exposed</a></li>
+                                        <li><a href="/collections/specialty-flushometer-parts/side-mount-operator">Side Mount Operator</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Sloan Repair Parts -->
+
+
+<!-- Sloan Flushometers -->
+<div class="accordion-item mb-4" id="acc2">
+    <h2 class="accordion-header acc-main-header" id="headingFixtures">
+        <button class="accordion-button collection-filter-tag{% if collection.handle == 'sloan-flushometers' %}{% else %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFixtures" aria-expanded="false" aria-controls="collapseFixtures">Sloan Flushometers</button>
+    </h2>
+    <div id="collapseFixtures" class="accordion-collapse collapse{% if collection.handle == 'sloan-flushometers' %} show{% endif %}" aria-labelledby="headingFixtures" data-bs-parent="#acc2">
+        <div class="accordion-body ps-3 pt-3 pb-3">
+            <div class="accordion-item mb-4" id="acc-2-1">
+                <h2 class="accordion-header" id="headingManualFlush">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManualFlush" aria-expanded="true" aria-controls="collapseManualFlush">Manual Flushometers</button>
+                </h2>
+                <div id="collapseManualFlush" class="accordion-collapse collapse" aria-labelledby="headingManualFlush" data-bs-parent="#acc-2-1">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'manual-flushometers' %}
+                                    <ul>
+                                        <li>{{ 'Regal' | link_to_add_tag: 'Regal' }}</li>
+                                        <li>{{ 'Royal' | link_to_add_tag: 'Royal' }}</li>
+                                        <li>{{ 'Sloan' | link_to_add_tag: 'Sloan' }}</li>
+                                        <li>{{ 'Uppercut' | link_to_add_tag: 'Uppercut' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/manual-flushometers/regal">Regal</a></li>
+                                        <li><a href="/collections/manual-flushometers/royal">Royal</a></li>
+                                        <li><a href="/collections/manual-flushometers/sloan">Sloan</a></li>
+                                        <li><a href="/collections/manual-flushometers/uppercut">Uppercut</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'manual-flushometers' %}
+                                    <ul>
+                                        <li>{{ 'Crown' | link_to_add_tag: 'Crown' }}</li>
+                                        <li>{{ 'Gem-2' | link_to_add_tag: 'Gem-2' }}</li>
+                                        <li>{{ 'Naval' | link_to_add_tag: 'Naval' }}</li>
+                                        <li>{{ 'Dolphin' | link_to_add_tag: 'Dolphin' }}</li>
+                                        <li>{{ 'CX Series' | link_to_add_tag: 'CX Series' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/manual-flushometers/crown">Crown</a></li>
+                                        <li><a href="/collections/manual-flushometers/gem-2">Gem-2</a></li>
+                                        <li><a href="/collections/manual-flushometers/naval">Naval</a></li>
+                                        <li><a href="/collections/manual-flushometers/dolphin">Dolphin</a></li>
+                                        <li><a href="/collections/manual-flushometers/cx-series">CX Series</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-2-2">
+                <h2 class="accordion-header" id="headingSensorFlush">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSensorFlush" aria-expanded="true" aria-controls="collapseSensorFlush">Sensor Flushometers</button>
+                </h2>
+                <div id="collapseSensorFlush" class="accordion-collapse collapse" aria-labelledby="headingSensorFlush" data-bs-parent="#acc-2-2">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'sensor-flushometers' %}
+                                    <ul>
+                                        <li>{{ 'G2' | link_to_add_tag: 'G2' }}</li>
+                                        <li>{{ 'ECOS' | link_to_add_tag: 'ECOS' }}</li>
+                                        <li>{{ 'SOLIS' | link_to_add_tag: 'SOLIS' }}</li>
+                                        <li>{{ 'Optima Regal' | link_to_add_tag: 'Optima Regal' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/sensor-flushometers/g2">G2</a></li>
+                                        <li><a href="/collections/sensor-flushometers/ecos">ECOS</a></li>
+                                        <li><a href="/collections/sensor-flushometers/solis">SOLIS</a></li>
+                                        <li><a href="/collections/sensor-flushometers/optima-regal">Optima Regal</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'sensor-flushometers' %}
+                                    <ul>
+                                        <li>{{ 'Optima Royal' | link_to_add_tag: 'Optima Royal' }}</li>
+                                        <li>{{ 'Optima Sloan' | link_to_add_tag: 'Optima Sloan' }}</li>
+                                        <li>{{ 'CX Series' | link_to_add_tag: 'CX Series' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/sensor-flushometers/optima-royal">Optima Royal</a></li>
+                                        <li><a href="/collections/sensor-flushometers/optima-sloan">Optima Sloan</a></li>
+                                        <li><a href="/collections/sensor-flushometers/cx-series">CX Series</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-2-3">
+                <h2 class="accordion-header" id="headingSpecialtyFlush">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecialtyFlush" aria-expanded="true" aria-controls="collapseSpecialtyFlush">Specialty Flushometers</button>
+                </h2>
+                <div id="collapseSpecialtyFlush" class="accordion-collapse collapse" aria-labelledby="headingSpecialtyFlush" data-bs-parent="#acc-2-3">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'specialty-flushometers' %}
+                                    <ul>
+                                        <li>{{ 'Slimeline' | link_to_add_tag: 'Slimeline' }}</li>
+                                        <li>{{ 'Footpedal' | link_to_add_tag: 'Footpedal' }}</li>
+                                        <li>{{ 'Hydraulic' | link_to_add_tag: 'Hydraulic' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/specialty-flushometers/slimeline">Slimeline</a></li>
+                                        <li><a href="/collections/specialty-flushometers/footpedal">Footpedal</a></li>
+                                        <li><a href="/collections/specialty-flushometers/hydraulic">Hydraulic</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'specialty-flushometers' %}
+                                    <ul>
+                                        <li>{{ 'Concealed' | link_to_add_tag: 'Concealed' }}</li>
+                                        <li>{{ 'Exposed' | link_to_add_tag: 'Exposed' }}</li>
+                                        <li>{{ 'Side Mount Operator' | link_to_add_tag: 'Side Mount Operator' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/specialty-flushometers/concealed">Concealed</a></li>
+                                        <li><a href="/collections/specialty-flushometers/exposed">Exposed</a></li>
+                                        <li><a href="/collections/specialty-flushometers/side-mount-operator">Side Mount Operator</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Sloan Flushometers -->
+
+
+<!-- Sloan Faucets -->
+<div class="accordion-item mb-4" id="acc3">
+    <h2 class="accordion-header acc-main-header" id="headingFaucets">
+        <button class="accordion-button collection-filter-tag{% if collection.handle == 'sloan-faucets' %}{% else %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaucets" aria-expanded="false" aria-controls="collapseFaucets">Sloan Faucets</button>
+    </h2>
+    <div id="collapseFaucets" class="accordion-collapse collapse{% if collection.handle == 'sloan-faucets' %} show{% endif %}" aria-labelledby="headingFaucets" data-bs-parent="#acc3">
+        <div class="accordion-body ps-3 pt-3 pb-3">
+            <div class="accordion-item mb-4" id="acc-3-1">
+                <h2 class="accordion-header" id="headingClark">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseClark" aria-expanded="true" aria-controls="collapseClark">Clark Street</button>
+                </h2>
+                <div id="collapseClark" class="accordion-collapse collapse" aria-labelledby="headingClark" data-bs-parent="#acc-3-1">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'clark-street' %}
+                                    <ul>
+                                        <li>{{ 'ETF-410' | link_to_add_tag: 'ETF-410' }}</li>
+                                        <li>{{ 'EBF-415' | link_to_add_tag: 'EBF-415' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/clark-street/ebf-415">EBF-415</a></li>
+                                        <li><a href="/collections/clark-street/ETF-410">ETF-410</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-3-2">
+                <h2 class="accordion-header" id="headingRush">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRush" aria-expanded="true" aria-controls="collapseRush">Rush Street</button>
+                </h2>
+                <div id="collapseRush" class="accordion-collapse collapse" aria-labelledby="headingRush" data-bs-parent="#acc-3-2">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'rush-street' %}
+                                    <ul>
+                                        <li>{{ 'ETF-420' | link_to_add_tag: 'ETF-420' }}</li>
+                                        <li>{{ 'EBF-425' | link_to_add_tag: 'EBF-425' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/rush-street/etf-420">ETF-420</a></li>
+                                        <li><a href="/collections/rush-street/ebf-425">EBF-425</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-3-3">
+                <h2 class="accordion-header" id="headingPremier">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePremier" aria-expanded="true" aria-controls="collapsePremier">Premier</button>
+                </h2>
+                <div id="collapsePremier" class="accordion-collapse collapse" aria-labelledby="headingPremier" data-bs-parent="#acc-3-3">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'premier' %}
+                                    <ul>
+                                        <li>{{ 'BAYS High Mount EFX 100 Series' | link_to_add_tag: 'BAYS High Mount EFX 100 Series' }}</li>
+                                        <li>{{ 'BAYS Mid Mount EFX 200 Series' | link_to_add_tag: 'BAYS Mid Mount EFX 200 Series' }}</li>
+                                        <li>{{ 'BAYS Low Mount EFX 300 Series' | link_to_add_tag: 'BAYS Low Mount EFX 300 Series' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/premier/bays-high-mount-efx-100-series">BAYS High Mount EFX 100 Series</a></li>
+                                        <li><a href="/collections/premier/bays-mid-mount-efx-200-series">BAYS Mid Mount EFX 200 Series</a></li>
+                                        <li><a href="/collections/premier/bays-low-mount-efx-300-series">BAYS Low Mount EFX 300 Series</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'premier' %}
+                                    <ul>
+                                        <li>{{ 'BAYS Low Mount with Base EFX 600 Series' | link_to_add_tag: 'BAYS Low Mount with Base EFX 600 Series' }}</li>
+                                        <li>{{ 'BAYS Wall Mount EFX 800 Series' | link_to_add_tag: 'BAYS Wall Mount EFX 800 Series' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/premier/bays-low-mount-with-base-efx-600-series">BAYS Low Mount with Base EFX 600 Series</a></li>
+                                        <li><a href="/collections/premier/bays-wall-mount-efx-800-series">BAYS Wall Mount EFX 800 Series</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-3-4">
+                <h2 class="accordion-header" id="headingDeluxe">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDeluxe" aria-expanded="true" aria-controls="collapseDeluxe">Deluxe</button>
+                </h2>
+                <div id="collapseDeluxe" class="accordion-collapse collapse" aria-labelledby="headingDeluxe" data-bs-parent="#acc-3-4">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'deluxe' %}
+                                    <ul>
+                                        <li>{{ 'EAF-100-150' | link_to_add_tag: 'EAF-100-150' }}</li>
+                                        <li>{{ 'EAF-200-250-275' | link_to_add_tag: 'EAF-200-250-275' }}</li>
+                                        <li>{{ 'EAF-225' | link_to_add_tag: 'EAF-225' }}</li>
+                                        <li>{{ 'EAF-350' | link_to_add_tag: 'EAF-350' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/deluxe/eaf-100-150">EAF-100-150</a></li>
+                                        <li><a href="/collections/deluxe/eaf-200-250-275">EAF-200-250-275</a></li>
+                                        <li><a href="/collections/deluxe/eaf-225">EAF-225</a></li>
+                                        <li><a href="/collections/deluxe/eaf-350">EAF-350</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'deluxe' %}
+                                    <ul>
+                                        <li>{{ 'EAF-700-750' | link_to_add_tag: 'EAF-700-750' }}</li>
+                                        <li>{{ 'EAF-200-250-275' | link_to_add_tag: 'EAF-200-250-275' }}</li>
+                                        <li>{{ 'EAF-225' | link_to_add_tag: 'EAF-225' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/deluxe/eaf-700-750">EAF-700-750</a></li>
+                                        <li><a href="/collections/deluxe/eaf-500-550">ETF-500-550</a></li>
+                                        <li><a href="/collections/deluxe/etf-800">ETF-800</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-3-5">
+                <h2 class="accordion-header" id="headingStandard">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStandard" aria-expanded="true" aria-controls="collapseStandard">Standard</button>
+                </h2>
+                <div id="collapseStandard" class="accordion-collapse collapse" aria-labelledby="headingStandard" data-bs-parent="#acc-3-5">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'standard' %}
+                                    <ul>
+                                        <li>{{ 'ETF-700/EBF-750' | link_to_add_tag: 'ETF-700/EBF-750' }}</li>
+                                        <li>{{ 'ETF-700-S/EBF-750-S' | link_to_add_tag: 'ETF-700-S/EBF-750-S' }}</li>
+                                        <li>{{ 'EAF-225' | link_to_add_tag: 'EAF-225' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/standard/etf-700-ebf-750">ETF-700/EBF-750</a></li>
+                                        <li><a href="/collections/standard/etf-700-s-ebf-750-s">ETF-700-S/EBF-750-S</a></li>
+                                        <li><a href="/collections/standard/sloan-sf-2100-2150">Sloan SF-2100-2150</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'standard' %}
+                                    <ul>
+                                        <li>{{ 'Sloan SF-2200-2250' | link_to_add_tag: 'Sloan SF-2200-2250' }}</li>
+                                        <li>{{ 'Sloan SF-2300-2350' | link_to_add_tag: 'Sloan SF-2300-2350' }}</li>
+                                        <li>{{ 'EAF-225' | link_to_add_tag: 'EAF-225' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/standard/sloan-sf-2200-2250">Sloan SF-2200-2250</a></li>
+                                        <li><a href="/collections/standard/sloan-sf-2300-2350">Sloan SF-2300-2350</a></li>
+                                        <li><a href="/collections/standard/sloan-sf-2400-2450">Sloan SF-2400-2450</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Sloan Faucets -->
+
+
+<!-- Sloan Soap Dispensers -->
+<div class="accordion-item mb-4" id="acc4">
+    <h2 class="accordion-header acc-main-header" id="headingSoap">
+        <button class="accordion-button collection-filter-tag {% if collection.handle == 'sloan-soap-dispensers' %}{% else %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoap" aria-expanded="false" aria-controls="collapseSoap">Sloan Soap Dispensers</button>
+    </h2>
+    <div id="collapseSoap" class="accordion-collapse collapse{% if collection.handle == 'sloan-soap-dispensers' %} show{% endif %}" aria-labelledby="headingSoap" data-bs-parent="#acc4">
+        <div class="accordion-body ps-3 pt-3 pb-3">
+            <div class="accordion-item mb-4" id="acc-4-1">
+                <h2 class="accordion-header" id="headingOptimaSoap">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOptimaSoap" aria-expanded="true" aria-controls="collapseOptimaSoap">Optima</button>
+                </h2>
+                <div id="collapseOptimaSoap" class="accordion-collapse collapse" aria-labelledby="headingOptimaSoap" data-bs-parent="#acc-4-1">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'optima' %}
+                                    <ul>
+                                        <li>{{ 'Optima ESD-200' | link_to_add_tag: 'Optima ESD-200' }}</li>
+                                        <li>{{ 'Optima ESD-200' | link_to_add_tag: 'Optima ESD-250' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/optima/optima-esd-200">Optima ESD-200</a></li>
+                                        <li><a href="/collections/optima/optima-esd-250">Optima ESD-250</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4" id="acc-4-2">
+                <h2 class="accordion-header" id="headingSloanSoap">
+                    <button class="accordion-button collection-filter-tag collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSloanSoap" aria-expanded="true" aria-controls="collapseSloanSoap">Sloan</button>
+                </h2>
+                <div id="collapseSloanSoap" class="accordion-collapse collapse" aria-labelledby="headingSloanSoap" data-bs-parent="#acc-4-2">
+                    <div class="accordion-body ps-3 pt-3 pb-3">
+                        <div class="d-flex flex-row ">
+                            <div class="acc-list">
+                                {% if collection.handle == 'sloan-soap-dispensers' %}
+                                    <ul>
+                                        <li>{{ 'Sloan ESD-1500' | link_to_add_tag: 'Sloan ESD-1500' }}</li>
+                                        <li>{{ 'Sloan ESD-2000' | link_to_add_tag: 'Sloan ESD-2000' }}</li>
+                                        <li>{{ 'Sloan ESD-2100' | link_to_add_tag: 'Sloan ESD-2100' }}</li>
+                                        <li>{{ 'Sloan ESD-360' | link_to_add_tag: 'Sloan ESD-360' }}</li>
+                                        <li>{{ 'Sloan ESD-400' | link_to_add_tag: 'Sloan ESD-400' }}</li>
+                                        <li>{{ 'Sloan ESD-410' | link_to_add_tag: 'Sloan ESD-410' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/sloan-soap-dispensers/sloan-esd-1500">Sloan ESD-1500</a></li>
+                                        <li><a href="/collections/specialty-flushometers/sloan-esd-2000">Sloan ESD-2000</a></li>
+                                        <li><a href="/collections/sloan-soap-dispensers/sloan-esd-2100">Sloan ESD-2100</a></li>
+                                        <li><a href="/collections/specialty-flushometers/sloan-esd-360">Sloan ESD-360</a></li>
+                                        <li><a href="/collections/sloan-soap-dispensers/sloan-esd-400">Sloan ESD-400</a></li>
+                                        <li><a href="/collections/specialty-flushometers/sloan-esd-410">Sloan ESD-410</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="acc-list">
+                                {% if collection.handle == 'sloan-soap-dispensers' %}
+                                    <ul>
+                                        <li>{{ 'Sloan ESD-420' | link_to_add_tag: 'Sloan ESD-420' }}</li>
+                                        <li>{{ 'Sloan ESD-500' | link_to_add_tag: 'Sloan ESD-500' }}</li>
+                                        <li>{{ 'Sloan ESD-600' | link_to_add_tag: 'Sloan ESD-600' }}</li>
+                                        <li>{{ 'Sloan ESD-700' | link_to_add_tag: 'Sloan ESD-700' }}</li>
+                                        <li>{{ 'Sloan ESD-800' | link_to_add_tag: 'Sloan ESD-800' }}</li>
+                                    </ul>
+                                {% else %}
+                                    <ul>
+                                        <li><a href="/collections/sloan-soap-dispensers/sloan-esd-420">Sloan ESD-420</a></li>
+                                        <li><a href="/collections/specialty-flushometers/sloan-esd-500">Sloan ESD-500</a></li>
+                                        <li><a href="/collections/sloan-soap-dispensers/sloan-esd-600">Sloan ESD-600</a></li>
+                                        <li><a href="/collections/specialty-flushometers/sloan-esd-700">Sloan ESD-700</a></li>
+                                        <li><a href="/collections/sloan-soap-dispensers/sloan-esd-800">Sloan ESD-800</a></li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Sloan Soap Dispensers -->

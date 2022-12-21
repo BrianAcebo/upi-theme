@@ -137,282 +137,122 @@
   <header class="header navbar navbar-expand-lg" id="Header">
     <div class="lg-container">
 
-      <div class="w-25 d-flex justify-content-center h-100">
-      {% render 'logo-snippet' %}
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="d-flex justify-content-start h-100">
+        {% render 'logo-snippet' %}
       </div>
 
-      <div class="w-50 collapse navbar-collapse navbar-collapse-left d-flex justify-content-center" id="navbarContent">
+      <div class="w-lg-50 collapse navbar-collapse navbar-collapse-left" id="navbarContent">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link main-link dropdown-toggle" href="/collections/sloan-fixtures" id="nav-fixtures" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sloan Fixtures
-            </a>
-            <div class="dropdown-menu" aria-labelledby="nav-fixtures">
-              <div class="row justify-content-center">
-                <div class="col-12 col-lg-4 py-3 p-lg-5 nav-fixtures-left">
-                  <div class="nav-list-title-container" data-id="navFlush">
-                    <a href="/collections/sloan-flushometers" class="nav-list-title">Sloan Flushometers</a>
-                    <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                  </div>
-                  <div class="nav-list-title-container" data-id="navFaucet">
-                    <a href="/collections/sloan-faucets" class="nav-list-title">Sloan Faucets</a>
-                    <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                  </div>
-                  <div class="nav-list-title-container" data-id="navSoap">
-                    <a href="/collections/sloan-soap-dispensers" class="nav-list-title">Sloan Soap Dispensers</a>
-                    <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                  </div>
-                </div>
-
-                <div class="col-12 col-lg-4 py-3 p-lg-5 nav-tabs-middle">
-                  <div class="nav-collection-collections-container col-12 flex-column" data-id="navFlush">
-                    <div class="nav-collection-items-container" id="manualDiParent">
-                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Manual - Diaphragm</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="manualPiParent">
-                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Manual - Piston</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="sensorParent">
-                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Sensor Hardwired/Battery/Solar</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="specialtyParent">
-                      <a href="/collections/manual-diaphragm" class="nav-collection-items-title">Specialty</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                  </div>
-
-                  <div class="nav-collection-collections-container col-12 flex-column" data-id="navFaucet">
-                    <div class="nav-collection-items-container" id="clarkParent">
-                      <a href="/collections/clark-street" class="nav-collection-items-title">Clark Street</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="rushParent">
-                      <a href="/collections/rush-street" class="nav-collection-items-title">Rush Street</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="premierParent">
-                      <a href="/collections/premier" class="nav-collection-items-title">Premier</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="deluxeParent">
-                      <a href="/collections/deluxe" class="nav-collection-items-title">Deluxe</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="standardParent">
-                      <a href="/collections/standard" class="nav-collection-items-title">Standard</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                  </div>
-
-                  <div class="nav-collection-collections-container col-12 flex-column" data-id="navSoap">
-                    <div class="nav-collection-items-container" id="optimaParent">
-                      <a href="/collections/optima" class="nav-collection-items-title">Optima</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                    <div class="nav-collection-items-container" id="sloanSoapParent">
-                      <a href="/collections/sloan-soap-dispensers" class="nav-collection-items-title">Sloan</a>
-                      <img src="https://cdn.shopify.com/s/files/1/0666/5784/5535/files/arrow-right.svg?v=1666302999" alt="arrow right" />
-                    </div>
-                  </div>
+          <div class="mobile-search w-100">
+            {%- if settings.predictive_search_enabled -%}
+              <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+            {%- endif -%}
+              <form action="{{ routes.search_url }}" method="get" role="search" class="mr-3 search search-modal__form">
+                <div class="field">
+                  <input class="search__input field__input"
+                    id="Search-In-Modal"
+                    type="search"
+                    name="q"
+                    value=""
+                    placeholder="{{ 'general.search.search' | t }}"
+                    {%- if settings.predictive_search_enabled -%}
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-owns="predictive-search-results-list"
+                      aria-controls="predictive-search-results-list"
+                      aria-haspopup="listbox"
+                      aria-autocomplete="list"
+                      autocorrect="off"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                    {%- endif -%}
+                  >
+                  <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
+                  <input type="hidden" name="options[prefix]" value="last">
+                  <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                    <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                      <use href="#icon-search">
+                    </svg>
+                  </button>
                 </div>
     
-                <div class="col-12 col-lg-4 py-3 p-lg-5 nav-tabs-right">           
-                  <div class="col-12 d-flex flex-column">
-
-                    <!-- Flushometers -->
-                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="manualDiChild">
-                      <a href="/collections/regal" class="nav-collection-item">Regal</a>
-                      <a href="/collections/royal" class="nav-collection-item">Royal</a>
-                      <a href="/collections/sloan" class="nav-collection-item">Sloan</a>
-                      <a href="/collections/uppercut" class="nav-collection-item">UPPERCUT</a>
+                {%- if settings.predictive_search_enabled -%}
+                  <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                    <div class="predictive-search__loading-state">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                      </svg>
                     </div>
-
-                    <div class="col-12 flex-column nav-collection-items-wrapper" id="manualPiChild">
-                      <a href="/collections/regal" class="nav-collection-item">Crown</a>
-                      <a href="/collections/royal" class="nav-collection-item">Gem-2</a>
-                      <a href="/collections/sloan" class="nav-collection-item">Naval</a>
-                      <a href="/collections/uppercut" class="nav-collection-item">Dolphin</a>
-                      <a href="/collections/cx-series-manual" class="nav-collection-item">CX Series</a>
-                    </div>
-
-                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="sensorChild">
-                      <a href="/collections/g2" class="nav-collection-item">G2</a>
-                      <a href="/collections/ecos" class="nav-collection-item">ECOS</a>
-                      <a href="/collections/solis" class="nav-collection-item">SOLIS</a>
-                      <a href="/collections/optima-regal" class="nav-collection-item">Optima Regal</a>
-                      <a href="/collections/optima-royal" class="nav-collection-item">Optima Royal</a>
-                      <a href="/collections/optima-sloan" class="nav-collection-item">Optima Sloan</a>
-                      <a href="/collections/cx-series-sensor" class="nav-collection-item">CX Series</a>
-                    </div>
-
-                    <div class="col-12 flex-column nav-collection-items-wrapper" id="specialtyChild">
-                      <a href="/collections/slimline" class="nav-collection-item">Slimline</a>
-                      <a href="/collections/footpedal" class="nav-collection-item">Footpedal</a>
-                      <a href="/collections/hydraulic" class="nav-collection-item">Hydraulic</a>
-                      <a href="/collections/concealed" class="nav-collection-item">Concealed</a>
-                      <a href="/collections/exposed" class="nav-collection-item">Exposed</a>
-                      <a href="/collections/side-mount-operator" class="nav-collection-item">Side Mount Operator</a>
-                    </div>
-                    <!-- /Flushometers -->
-
-                    <!-- Faucets -->
-                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="clarkChild">
-                      <a href="/collections/etf-410" class="nav-collection-item">ETF-410</a>
-                      <a href="/collections/ebf-415" class="nav-collection-item">EBF-415</a>
-                    </div>
-
-                    <div class="col-12 flex-column pb-3 nav-collection-items-wrapper" id="rushChild">
-                      <a href="/collections/etf-420" class="nav-collection-item">ETF-420</a>
-                      <a href="/collections/ebf-425" class="nav-collection-item">EBF-425</a>
-                    </div>
-
-                    <div class="col-12 flex-column nav-collection-items-wrapper" id="premierChild">
-                      <a href="/collections/bays-high-mount-efx-100-series" class="nav-collection-item">BAYS High Mount EFX 100 Series</a>
-                      <a href="/collections/bays-mid-mount-efx-200-series" class="nav-collection-item">BAYS Mid Mount EFX 200 Series</a>
-                      <a href="/collections/bays-low-mount-efx-300-series" class="nav-collection-item">BAYS Low Mount EFX 300 Series</a>
-                      <a href="/collections/bays-low-mount-with-base-efx-600-series" class="nav-collection-item">BAYS Low Mount with Base EFX 600 Series</a>
-                      <a href="/collections/bays-wall-mount-efx-800-series" class="nav-collection-item">BAYS Wall Mount EFX 800 Series</a>
-                    </div>
-
-                    <div class="col-12 flex-column nav-collection-items-wrapper" id="deluxeChild">
-                      <a href="/collections/eaf-100-150" class="nav-collection-item">EAF-100-150</a>
-                      <a href="/collections/eaf-200-250-275" class="nav-collection-item">EAF-200-250-275</a>
-                      <a href="/collections/eaf-225" class="nav-collection-item">EAF-225</a>
-                      <a href="/collections/eaf-350" class="nav-collection-item">EAF-350</a>
-                      <a href="/collections/eaf-700-750" class="nav-collection-item">EAF-700-750</a>
-                      <a href="/collections/eaf-500-550" class="nav-collection-item">ETF-500-550</a>
-                      <a href="/collections/eaf-800" class="nav-collection-item">ETF-800</a>
-                    </div>
-
-                    <div class="col-12 flex-column nav-collection-items-wrapper" id="standardChild">
-                      <a href="/collections/etf-700-ebf-750" class="nav-collection-item">ETF-700/EBF-750</a>
-                      <a href="/collections/etf-700-s-ebf-750-s" class="nav-collection-item">ETF-700-S/EBF-750-S</a>
-                      <a href="/collections/sloan-sf-2100-2150" class="nav-collection-item">Sloan SF-2100-2150</a>
-                      <a href="/collections/sloan-sf-2200-2250" class="nav-collection-item">Sloan SF-2200-2250</a>
-                      <a href="/collections/sloan-sf-2300-2350" class="nav-collection-item">Sloan SF-2300-2350</a>
-                      <a href="/collections/sloan-sf-2400-2450" class="nav-collection-item">Sloan SF-2400-2450</a>
-                    </div>
-                    <!-- /Faucets -->
-
-                    <!-- Soap Dispensers -->
-                    <div class="col-12 flex-column nav-collection-items-wrapper" id="optimaChild">
-                      <a href="/collections/optima-esd-200" class="nav-collection-item">Optima ESD-200</a>
-                      <a href="/collections/optima-esd-250" class="nav-collection-item">Optima ESD-250</a>
-                    </div>
-
-                    <div class="col-12 flex-column nav-collection-items-wrapper" id="sloanSoapChild">
-                      <a href="/collections/sloan-esd-1500" class="nav-collection-item">Sloan ESD-1500</a>
-                      <a href="/collections/sloan-esd-2000" class="nav-collection-item">Sloan ESD-2000</a>
-                      <a href="/collections/sloan-esd-2100" class="nav-collection-item">Sloan ESD-2100</a>
-                      <a href="/collections/sloan-esd-360" class="nav-collection-item">Sloan ESD-360</a>
-                      <a href="/collections/sloan-esd-400" class="nav-collection-item">Sloan ESD-400</a>
-                      <a href="/collections/sloan-esd-410" class="nav-collection-item">Sloan ESD-410</a>
-                      <a href="/collections/sloan-esd-420" class="nav-collection-item">Sloan ESD-420</a>
-                      <a href="/collections/sloan-esd-500" class="nav-collection-item">Sloan ESD-500</a>
-                      <a href="/collections/sloan-esd-600" class="nav-collection-item">Sloan ESD-600</a>
-                      <a href="/collections/sloan-esd-700" class="nav-collection-item">Sloan ESD-700</a>
-                      <a href="/collections/sloan-esd-800" class="nav-collection-item">Sloan ESD-800</a>
-                    </div>
-                    <!-- /Faucets -->
                   </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link main-link" href="/pages/sloan-repair-parts">Sloan Repair Parts</a>
-          </li>
+    
+                  <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                {%- endif -%}
+              </form>
+            {%- if settings.predictive_search_enabled -%}
+              </predictive-search>
+            {%- endif -%}
+          </div>
+          
+          {% render 'desktop-header-menu' %}
 
-          <li class="nav-item">
-            <a class="nav-link main-link" href="/collections/plumbing-toiletry-accessories">Plumbing & Toiletry Accessories </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link main-link" href="/pages/resources">Resources</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link main-link" href="/pages/contact">Contact</a>
-          </li>
+          {% render 'mobile-header-menu' %}
         </ul>
       </div>
 
-      <div class="header__icons w-25 d-flex justify-content-center h-100">
-        <details-modal class="header__search">
-          <details>
-            <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
-              <span>
-                <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+      <div class="header__icons d-flex justify-content-end h-100">
+        {%- if settings.predictive_search_enabled -%}
+          <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+        {%- endif -%}
+          <form action="{{ routes.search_url }}" method="get" role="search" class="mr-3 search search-modal__form">
+            <div class="field">
+              <input class="search__input field__input"
+                id="Search-In-Modal"
+                type="search"
+                name="q"
+                value=""
+                placeholder="{{ 'general.search.search' | t }}"
+                {%- if settings.predictive_search_enabled -%}
+                  role="combobox"
+                  aria-expanded="false"
+                  aria-owns="predictive-search-results-list"
+                  aria-controls="predictive-search-results-list"
+                  aria-haspopup="listbox"
+                  aria-autocomplete="list"
+                  autocorrect="off"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                {%- endif -%}
+              >
+              <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
+              <input type="hidden" name="options[prefix]" value="last">
+              <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
                   <use href="#icon-search">
                 </svg>
-                <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false" role="presentation">
-                  <use href="#icon-close">
-                </svg>
-              </span>
-            </summary>
-            <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
-              <div class="modal-overlay"></div>
-              <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
-                {%- if settings.predictive_search_enabled -%}
-                  <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
-                {%- endif -%}
-                  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
-                    <div class="field">
-                      <input class="search__input field__input"
-                        id="Search-In-Modal"
-                        type="search"
-                        name="q"
-                        value=""
-                        placeholder="{{ 'general.search.search' | t }}"
-                        {%- if settings.predictive_search_enabled -%}
-                          role="combobox"
-                          aria-expanded="false"
-                          aria-owns="predictive-search-results-list"
-                          aria-controls="predictive-search-results-list"
-                          aria-haspopup="listbox"
-                          aria-autocomplete="list"
-                          autocorrect="off"
-                          autocomplete="off"
-                          autocapitalize="off"
-                          spellcheck="false"
-                        {%- endif -%}
-                      >
-                      <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
-                      <input type="hidden" name="options[prefix]" value="last">
-                      <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                        <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-                          <use href="#icon-search">
-                        </svg>
-                      </button>
-                    </div>
-
-                    {%- if settings.predictive_search_enabled -%}
-                      <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
-                        <div class="predictive-search__loading-state">
-                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                          </svg>
-                        </div>
-                      </div>
-
-                      <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
-                    {%- endif -%}
-                  </form>
-                {%- if settings.predictive_search_enabled -%}
-                  </predictive-search>
-                {%- endif -%}
-                <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
-                  <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
-                    <use href="#icon-close">
-                  </svg>
-                </button>
-              </div>
+              </button>
             </div>
-          </details>
-        </details-modal>
+
+            {%- if settings.predictive_search_enabled -%}
+              <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                <div class="predictive-search__loading-state">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+            {%- endif -%}
+          </form>
+        {%- if settings.predictive_search_enabled -%}
+          </predictive-search>
+        {%- endif -%}
 
         {%- if shop.customer_accounts_enabled -%}
           <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
@@ -749,6 +589,17 @@
   }
 
 window.addEventListener('DOMContentLoaded', () => {
+
+  let open = false;
+  $('.navbar-toggler').click(function() {
+    if (open) {
+      $('.navbar-collapse').css('left', '-100%');
+      open = false;
+    } else {
+      $('.navbar-collapse').css('left', '0');
+      open = true;
+    }
+  });
 
   $('.nav-list-title-container').each(function() { 
     $(this).hover(function() {
